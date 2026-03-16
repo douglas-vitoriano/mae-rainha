@@ -1,13 +1,12 @@
+# fly.toml app configuration file generated for mae-rainha on 2026-03-16T15:11:56Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
 app = 'mae-rainha'
 primary_region = 'ams'
 
 [build]
-  dockerfile = "Dockerfile"
-
-[env]
-  BRIDGETOWN_ENV = "production"
-  BRIDGETOWN_PORT = "8080"
-  RUBY_YJIT_ENABLE = "1"
 
 [http_service]
   internal_port = 8080
@@ -17,15 +16,11 @@ primary_region = 'ams'
   min_machines_running = 0
   processes = ['app']
 
-  [http_service.concurrency]
-    type = "requests"
-    hard_limit = 200
-    soft_limit = 150
-
 [[vm]]
+  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory = '512mb'
+  memory_mb = 256
 
 [[statics]]
   guest_path = '/app/output'
