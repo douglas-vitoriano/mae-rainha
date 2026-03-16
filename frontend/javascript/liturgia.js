@@ -1,12 +1,10 @@
 /**
  * liturgia.js
- * Consome https://liturgia.up.railway.app/v2/ (Dancrf/liturgia-diaria)
+ * Dados fornecidos pelo Ruby no build via window.LITURGIA_DATA
  * Toda estilização via classes CSS — zero style inline.
  */
 
 import { initTabs } from './tabs.js'
-
-const API_URL = 'https://liturgia.up.railway.app/v2/'
 
 const DIAS_SEMANA = [
   'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira',
@@ -82,13 +80,6 @@ const COR_CONFIG = {
 // ── Estado global da data navegada ──
 let dataAtual = new Date()
 
-function formatarDataAPI(date) {
-  const d = String(date.getDate()).padStart(2, '0')
-  const m = String(date.getMonth() + 1).padStart(2, '0')
-  const a = date.getFullYear()
-  return `${d}-${m}-${a}` // formato DD-MM-YYYY aceito pela API
-}
-
 function formatarDataLabel(date) {
   return `${DIAS_SEMANA[date.getDay()]}, ${date.getDate()} de ${MESES[date.getMonth()]} de ${date.getFullYear()}`
 }
@@ -129,7 +120,7 @@ export function initLiturgiaPage() {
     hoje.setHours(0, 0, 0, 0)
     const atual = new Date(dataAtual)
     atual.setHours(0, 0, 0, 0)
-    if (atual >= hoje) return // não avança além de hoje
+    if (atual >= hoje) return
     dataAtual = new Date(dataAtual)
     dataAtual.setDate(dataAtual.getDate() + 1)
     if (badge) badge.textContent = formatarDataLabel(dataAtual)
@@ -139,14 +130,7 @@ export function initLiturgiaPage() {
   })
 }
 
-async function carregarLiturgia(root, date) {
-  root.innerHTML = `
-    <div class="liturgia-loading" role="status">
-      <div class="spinner" aria-hidden="true"></div>
-      <p>Buscando a liturgia do dia…</p>
-    </div>`
-
-  // Reseta meta ao trocar de data
+function carregarLiturgia(root, date) {
   const corBadge = document.getElementById('liturgia-cor-badge')
   if (corBadge) {
     corBadge.className = 'liturgia-cor-badge'
@@ -155,17 +139,20 @@ async function carregarLiturgia(root, date) {
   const tempoEl = document.getElementById('liturgia-tempo')
   if (tempoEl) tempoEl.hidden = true
 
-  try {
-    const url = `${API_URL}?dia=${formatarDataAPI(date)}`
-    const resp = await fetch(url)
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-    const data = await resp.json()
-    preencherMeta(data)
-    renderLiturgia(root, data)
-  } catch (err) {
-    console.warn('[liturgia] API indisponível:', err.message)
+  const dia = String(date.getDate()).padStart(2, '0')
+  const mes = String(date.getMonth() + 1).padStart(2, '0')
+  const ano = date.getFullYear()
+  const chave = `${dia}/${mes}/${ano}`
+
+  const data = window.LITURGIA_DATA?.[chave]
+
+  if (!data) {
     renderFallback(root)
+    return
   }
+
+  preencherMeta(data)
+  renderLiturgia(root, data)
 }
 
 function preencherMeta(data) {
@@ -191,18 +178,18 @@ function preencherMeta(data) {
 function renderLiturgia(root, data) {
   const { leituras = {}, oracoes = {}, antifonas = {} } = data
 
-  const primeiraLeitura  = leituras.primeiraLeitura  || []
-  const segundaLeitura   = leituras.segundaLeitura   || []
-  const salmo            = leituras.salmo            || []
-  const evangelho        = leituras.evangelho        || []
+  const primeiraLeitura = leituras.primeiraLeitura || []
+  const segundaLeitura  = leituras.segundaLeitura  || []
+  const salmo           = leituras.salmo           || []
+  const evangelho       = leituras.evangelho       || []
 
   const abas = []
   if (primeiraLeitura.length || segundaLeitura.length) abas.push({ id: 'pan-leituras',  icon: '📖', label: 'Leituras' })
-  if (salmo.length)            abas.push({ id: 'pan-salmo',    icon: '🎵', label: 'Salmo' })
-  if (evangelho.length)        abas.push({ id: 'pan-evangelho',icon: '✝️', label: 'Evangelho' })
-  if (oracoes.coleta)          abas.push({ id: 'pan-oracoes',  icon: '🙏', label: 'Orações' })
+  if (salmo.length)           abas.push({ id: 'pan-salmo',    icon: '🎵', label: 'Salmo' })
+  if (evangelho.length)       abas.push({ id: 'pan-evangelho',icon: '✝️', label: 'Evangelho' })
+  if (oracoes.coleta)         abas.push({ id: 'pan-oracoes',  icon: '🙏', label: 'Orações' })
   if (antifonas.entrada || antifonas.comunhao)
-                               abas.push({ id: 'pan-antifonas',icon: '🎶', label: 'Antífonas' })
+                              abas.push({ id: 'pan-antifonas',icon: '🎶', label: 'Antífonas' })
 
   if (!abas.length) { renderFallback(root); return }
 
@@ -244,8 +231,8 @@ function renderLiturgia(root, data) {
 
   const panelAntifonas = (antifonas.entrada || antifonas.comunhao) ? `
     <div id="pan-antifonas" class="liturgia-panel" role="tabpanel">
-      ${antifonas.entrada   ? blocoOracao('Antífona de Entrada',   antifonas.entrada)   : ''}
-      ${antifonas.comunhao  ? blocoOracao('Antífona da Comunhão',  antifonas.comunhao)  : ''}
+      ${antifonas.entrada  ? blocoOracao('Antífona de Entrada',  antifonas.entrada)  : ''}
+      ${antifonas.comunhao ? blocoOracao('Antífona da Comunhão', antifonas.comunhao) : ''}
     </div>` : ''
 
   root.innerHTML = `
@@ -266,7 +253,7 @@ function blocoLeitura(titulo, leitura) {
   return `
     <article class="liturgia-bloco" aria-label="${titulo}">
       <p class="liturgia-bloco-titulo"><span aria-hidden="true"></span>${titulo}</p>
-      ${leitura.titulo   ? `<p class="liturgia-bloco-subtitulo">${leitura.titulo}</p>` : ''}
+      ${leitura.titulo     ? `<p class="liturgia-bloco-subtitulo">${leitura.titulo}</p>` : ''}
       ${leitura.referencia ? `<p class="liturgia-referencia">${leitura.referencia}</p>` : ''}
       <div class="liturgia-versiculo">${formatarTexto(leitura.texto || '')}</div>
     </article>`
