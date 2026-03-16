@@ -1,20 +1,29 @@
-name: Deploy to Fly.io
+name: Deploy to Cloudflare Pages
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
 jobs:
-  deploy:
-    name: Deploy
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v3
 
-      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Configurar Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4.2'
+          bundler-cache: true
 
-      - name: Deploy
-        run: flyctl deploy --remote-only
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      - name: Instalar dependências
+        run: bundle install
+
+      - name: Build do site Bridgetown
+        run: bundle exec bridgetown build
+
+      - name: Disparar deploy no Cloudflare Pages
+        run: curl -X POST ${{ secrets.CLOUDFLARE_MAERAINHA }}
