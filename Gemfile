@@ -16,6 +16,9 @@
 
 # Gems source:
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby "3.2.8"
 # Or you can switch the above to an alternate community-led server:
 # source "https://gem.coop"
 
