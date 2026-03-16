@@ -1,5 +1,2 @@
 name = "mae-rainha"
-main = "output/index.md"
-compatibility_date = "2026-03-16"
-account_id = "4cdf79ff6f3ac9d80329bb9c9bbf6e0e"
-workers_dev = true
+pages_build_output_dir = "output"
