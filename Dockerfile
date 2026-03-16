@@ -8,7 +8,7 @@ RUN sed -i "s/main/main non-free contrib/g" /etc/apt/sources.list.d/debian.sourc
   && useradd --create-home ruby \
   && mkdir /node_modules && chown ruby:ruby -R /node_modules
 
-WORKDIR /app
+WORKDIR /src
 
 COPY Gemfile* ./
 RUN gem install bundler
