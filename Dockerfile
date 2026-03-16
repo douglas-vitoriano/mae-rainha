@@ -8,6 +8,8 @@ RUN sed -i "s/main/main non-free contrib/g" /etc/apt/sources.list.d/debian.sourc
   && useradd --create-home ruby \
   && mkdir /node_modules && chown ruby:ruby -R /node_modules
 
+WORKDIR /app
+
 COPY Gemfile* ./
 RUN gem install bundler
 RUN bundle install --jobs $(nproc)
@@ -15,5 +17,5 @@ ENV PATH="${PATH}:/home/ruby/.local/bin"
 
 COPY . .
 
-EXPOSE 80
+EXPOSE 8080
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
