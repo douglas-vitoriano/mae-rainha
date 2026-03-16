@@ -1,0 +1,108 @@
+.navbar-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(11, 21, 48, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201, 151, 58, 0.18);
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.navbar-principal.navbar-oculta {
+  transform: translateY(-100%);
+}
+
+.navbar-principal.navbar-visivel {
+  transform: translateY(0);
+}
+
+.navbar-principal .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-brand {
+  margin-top: 1rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-principal .navbar-item {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+  padding: 0.65rem 1rem;
+}
+
+.navbar-principal .navbar-item:hover,
+.navbar-principal .navbar-item.is-active {
+  color: var(--dourado-claro);
+  background: transparent !important;
+}
+
+.navbar-principal .navbar-burger span {
+  background: white;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.navbar-principal .navbar-burger:hover {
+  background: transparent;
+}
+
+.btn-participar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+  color: var(--azul-noite) !important;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(201, 151, 58, 0.35);
+}
+
+.btn-participar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(201, 151, 58, 0.5);
+  color: var(--azul-noite) !important;
+}
+
+@media (max-width: 1023px) {
+  .navbar-brand {
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-burger {
+    display: block;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .navbar-principal .navbar-menu {
+    width: 100%; 
+  }
+}

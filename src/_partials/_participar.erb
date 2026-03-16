@@ -1,0 +1,100 @@
+<section class="secao-cta" id="participar">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-5">
+        <p class="section-label reveal" style="color: var(--dourado)">Faça Parte</p>
+        <h2 class="cta-titulo reveal">
+          Sua jornada<br>
+          começa com um<br>
+          <em>passo de fé</em>
+        </h2>
+        <div class="divisor-dourado reveal" style="margin-top: 1.5rem;"></div>
+        <p class="reveal" style="color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.9; margin-top: 1rem; max-width: 360px;">
+          Não importa onde você está na sua caminhada espiritual.
+          Aqui há espaço para todos que buscam a Deus com o coração aberto.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="mailto:<%= site.data.grupo.contato.email %>" class="contato-item reveal">
+            <div class="contato-icone"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contato-info-titulo">E-mail</span>
+              <span class="contato-info-valor"><%= site.data.grupo.contato.email %></span>
+            </div>
+          </a>
+          <a href="tel:<%= site.data.grupo.contato.telefone %>" class="contato-item reveal">
+            <div class="contato-icone"><i class="fas fa-phone"></i></div>
+            <div>
+              <span class="contato-info-titulo">Telefone / WhatsApp</span>
+              <span class="contato-info-valor"><%= site.data.grupo.contato.telefone %></span>
+            </div>
+          </a>
+          <a href="<%= site.data.grupo.contato.link_instagram %>" class="contato-item reveal">
+            <div class="contato-icone"><i class="fab fa-instagram"></i></div>
+            <div>
+              <span class="contato-info-titulo">Instagram</span>
+              <span class="contato-info-valor"><%= site.data.grupo.contato.instagram %></span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="column is-6 is-offset-1" id="contato">
+        <div class="reveal" style="
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(201,151,58,0.2);
+          border-radius: 1.5rem;
+          padding: 3rem;
+        ">
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: white; font-weight: 600; margin-bottom: 0.5rem;">
+            Pedido de Oração
+          </h3>
+          <p style="color: rgba(255,255,255,0.45); font-size: 0.9rem; margin-bottom: 2rem;">
+            Responderemos o mais rapido possivel e com todo carinho ✦
+          </p>
+          <form class="form-elegante" action="#" method="POST">
+            <div class="columns is-multiline">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Nome Completo</label>
+                  <div class="control">
+                    <input class="input" type="text" name="nome" placeholder="Seu nome" required>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Telefone</label>
+                  <div class="control">
+                    <input class="input" type="tel" name="telefone" placeholder="(11) 9 0000-0000">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-12">
+                <div class="field">
+                  <label class="label">E-mail</label>
+                  <div class="control">
+                    <input class="input" type="email" name="email" placeholder="seu@email.com" required>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-12">
+                <div class="field">
+                  <label class="label">Como podemos ajudar?</label>
+                  <div class="control">
+                    <textarea class="textarea" name="mensagem" rows="4"
+                      placeholder="Conta um pouco sobre você e como chegou até nós..."></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-12">
+                <button type="submit" class="btn-enviar">
+                  <i class="fas fa-paper-plane" style="margin-right: 0.5rem"></i>
+                  Enviar Mensagem
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

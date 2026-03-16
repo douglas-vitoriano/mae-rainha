@@ -1,0 +1,40 @@
+<section class="secao secao-marfim" id="sobre">
+  <div class="container">
+    <div class="columns is-vcentered mb-6">
+      <div class="column is-6">
+        <p class="section-label reveal">Nossa Missão</p>
+        <h2 class="titulo-secao escuro reveal">
+          Quem somos e<br>
+          <em style="font-style:italic; color: var(--dourado)">o que nos move</em>
+        </h2>
+        <div class="divisor-dourado reveal"></div>
+        <p class="reveal" style="color: var(--texto-medio); line-height: 1.9; font-size: 1rem; max-width: 480px;">
+          <%= site.data.grupo.missao %>
+        </p>
+      </div>
+      <div class="column is-6">
+        <div class="bloco-missao reveal">
+          <p class="section-label" style="color: var(--dourado-claro); margin-bottom: 1rem;">Nossa Visão</p>
+          <p class="missao-texto">
+            "<%= site.data.grupo.visao %>"
+          </p>
+          <div class="divisor-dourado" style="margin-top: 2rem;"></div>
+          <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 1rem;">
+            — <%= site.data.grupo.nome %>, <%= site.data.grupo.comunidade %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-multiline">
+      <% site.data.grupo.valores.each_with_index do |valor, i| %>
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="sobre-card reveal reveal-delay-<%= i + 1 %>">
+          <img class="card-icone" src="<%= valor.icone %>" alt="<%= valor.titulo %>">
+          <h3 class="card-titulo"><%= valor.titulo %></h3>
+          <p class="card-texto"><%= valor.texto %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

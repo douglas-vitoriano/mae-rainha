@@ -1,0 +1,21 @@
+/* =====================================================
+   index.css — Entry point
+   Importa os módulos na ordem correta de cascata.
+
+   Estrutura:
+     _tokens.css   → variáveis, reset, base, keyframes
+     _navbar.css   → navbar fixa + hide-on-scroll
+     _hero.css     → hero principal + ornamento + stats
+     _sections.css → sobre, encontros, testemunhos, CTA, form
+     _footer.css   → rodapé
+     _liturgia.css → página de liturgia + error pages
+   ===================================================== */
+
+@import "./_tokens.css";
+@import "./_navbar.css";
+@import "./_hero.css";
+@import "./_sections.css";
+@import "./_footer.css";
+@import "./_liturgia.css";
+@import "./_error.css";
+@import "./_pwa.css";

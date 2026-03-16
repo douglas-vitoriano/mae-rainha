@@ -1,0 +1,85 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<% resource_title = strip_html(strip_newlines(title)) %>
+<% page_title = resource_title != "Index" ? "#{resource_title} — Mãe Rainha" : "#{metadata.title}" %>
+<title><%= page_title %></title>
+
+<%# ── SEO básico ── %>
+<meta name="description" content="<%= metadata.description || 'Adoração, oração e louvor — Comunidade Nossa Senhora Aparecida, Paróquia Santa Cruz, Barueri - SP' %>" />
+<meta name="author" content="Grupo de Oração Mãe Rainha" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="<%= site.config.url %><%= resource.relative_url %>" />
+
+<%# ── Open Graph (Facebook, WhatsApp, Telegram) ── %>
+<meta property="og:type"        content="website" />
+<meta property="og:site_name"   content="Grupo de Oração Mãe Rainha" />
+<meta property="og:title"       content="<%= page_title %>" />
+<meta property="og:description" content="<%= metadata.description || 'Adoração, oração e louvor — Comunidade Nossa Senhora Aparecida' %>" />
+<meta property="og:url"         content="<%= site.config.url %><%= resource.relative_url %>" />
+<meta property="og:image"       content="<%= site.config.url %>/images/logotipo.png" />
+<meta property="og:image:width"  content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:locale"      content="pt_BR" />
+
+<%# ── Twitter / X Card ── %>
+<meta name="twitter:card"        content="summary" />
+<meta name="twitter:title"       content="<%= page_title %>" />
+<meta name="twitter:description" content="<%= metadata.description || 'Adoração, oração e louvor — Comunidade Nossa Senhora Aparecida' %>" />
+<meta name="twitter:image"       content="<%= site.config.url %>/images/logotipo.png" />
+
+<%# ── PWA / Web App ── %>
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#0b1530" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#0b1530" />
+<meta name="color-scheme" content="dark light" />
+
+<%# ── Android / Chrome ── %>
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="application-name"       content="Mãe Rainha" />
+
+<%# ── Apple / iOS ── %>
+<meta name="apple-mobile-web-app-capable"          content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title"            content="Mãe Rainha" />
+<meta name="format-detection" content="telephone=no" />
+
+<%# ── Apple Touch Icons (múltiplos tamanhos para compatibilidade) ── %>
+<link rel="apple-touch-icon"                   href="/images/icons/icon-192.png" />
+<link rel="apple-touch-icon" sizes="152x152"   href="/images/icons/icon-152.png" />
+<link rel="apple-touch-icon" sizes="144x144"   href="/images/icons/icon-144.png" />
+<link rel="apple-touch-icon" sizes="128x128"   href="/images/icons/icon-128.png" />
+<link rel="apple-touch-icon" sizes="96x96"     href="/images/icons/icon-96.png" />
+
+<%# ── Favicons ── %>
+<link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192.png" />
+<link rel="icon" type="image/png" sizes="128x128" href="/images/icons/icon-128.png" />
+<link rel="icon" type="image/png" sizes="96x96"   href="/images/icons/icon-96.png" />
+<link rel="shortcut icon"                          href="/images/icons/icon-192.png" />
+
+<%# ── Windows / Microsoft ── %>
+<meta name="msapplication-TileImage"   content="/images/icons/icon-144.png" />
+<meta name="msapplication-TileColor"   content="#0b1530" />
+<meta name="msapplication-config"      content="none" />
+<meta name="msapplication-tap-highlight" content="no" />
+
+<%# ── Preconnects para performance ── %>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://liturgia.up.railway.app" />
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+<%# ── Fontes ── %>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+<%# ── CSS externo ── %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<%# ── App CSS/JS (bundled) ── %>
+<link rel="stylesheet" href="<%= asset_path :css %>" />
+<script src="<%= asset_path :js %>" defer></script>
+
+<%# ── Preload imagens críticas ── %>
+<link rel="preload" as="image" href="/images/logotipo.png" />

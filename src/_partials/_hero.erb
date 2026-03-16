@@ -1,0 +1,45 @@
+<section class="hero-principal">
+  <img src="/images/sagradafamilia.png" alt="" class="hero-ornamento" aria-hidden="true">
+
+  <div class="container hero-content">
+    <div class="columns is-vcentered">
+      <div class="column is-7">
+        <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;">
+          <div>
+            <div class="hero-badge" style="margin-bottom:0.75rem;">
+              <span>✦</span>
+              <span><%= site.data.grupo.comunidade %> · <%= site.data.grupo.paroquia %></span>
+            </div>
+            <h1 class="hero-titulo">
+              Grupo de Oração
+              <em class="destaque">Mãe Rainha</em>
+            </h1>
+          </div>
+        </div>
+        <p class="hero-subtitulo"><%= site.data.grupo.subtitulo %></p>
+        <p class="hero-descricao"><%= site.data.grupo.missao %></p>
+        <div class="hero-btns">
+          <a href="#participar" class="btn-hero-primario">
+            <i class="fas fa-heart"></i>
+            Quero Participar
+          </a>
+          <a href="#sobre" class="btn-hero-secundario">
+            <i class="fas fa-play" style="font-size:0.7rem"></i>
+            Conheça Mais
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-numero"><%= Time.now.year - site.data.grupo.fundado.to_i %></span>
+            <span class="stat-label">Anos de Fé</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-dot"></div>
+    <span>Scroll</span>
+  </div>
+</section>

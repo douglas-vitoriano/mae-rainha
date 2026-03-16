@@ -1,0 +1,581 @@
+/* ==============================================
+   _liturgia.css — Página de Liturgia Diária
+   Nenhuma regra depende de style="" inline.
+   Versão: API v2 Dancrf/liturgia-diaria
+   ============================================== */
+
+/* ── Hero ── */
+.liturgia-hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201,151,58,0.07) 0%, transparent 70%),
+    linear-gradient(160deg, #0b1530 0%, #0f1b3d 100%);
+  padding: 14rem 1.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.liturgia-hero::after {
+  content: '✦';
+  position: absolute;
+  font-size: 20rem;
+  color: rgba(201,151,58,0.03);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.liturgia-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.liturgia-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.liturgia-titulo em {
+  font-style: italic;
+  color: var(--dourado);
+}
+
+.liturgia-subtitulo {
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  max-width: 480px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Navegação de datas ── */
+.liturgia-data-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.liturgia-nav-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,151,58,0.3);
+  background: rgba(201,151,58,0.08);
+  color: var(--dourado);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.liturgia-nav-btn:hover:not(:disabled) {
+  background: rgba(201,151,58,0.2);
+  border-color: rgba(201,151,58,0.6);
+  transform: scale(1.08);
+}
+
+.liturgia-nav-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+/* ── Data badge ── */
+.liturgia-data-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(201,151,58,0.1);
+  border: 1px solid rgba(201,151,58,0.25);
+  border-radius: 50px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dourado-claro);
+}
+
+.liturgia-data-badge i {
+  color: var(--dourado);
+  font-size: 0.72rem;
+}
+
+/* ── Cor litúrgica badge ── */
+.liturgia-cor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.cor-roxo    { background: rgba(128,0,128,0.15); border-color: rgba(128,0,128,0.3); color: #d8a0d8; }
+.cor-branco  { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); }
+.cor-verde   { background: rgba(0,128,0,0.15); border-color: rgba(0,128,0,0.3); color: #80c880; }
+.cor-vermelho{ background: rgba(180,0,0,0.18); border-color: rgba(180,0,0,0.35); color: #f08080; }
+.cor-rosa    { background: rgba(255,105,180,0.15); border-color: rgba(255,105,180,0.3); color: #ffb6c1; }
+.cor-dourado { background: rgba(201,151,58,0.15); border-color: rgba(201,151,58,0.3); color: var(--dourado-claro); }
+
+/* ── Container principal ── */
+.liturgia-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Oração de abertura ── */
+.liturgia-abertura {
+  background: linear-gradient(135deg, var(--azul-noite), var(--azul-medio));
+  border: 1px solid rgba(201,151,58,0.2);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.liturgia-abertura-icone {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.liturgia-abertura-texto {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.85;
+  max-width: 520px;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.liturgia-abertura-ref {
+  color: var(--dourado);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* ── Tempo litúrgico ── */
+.liturgia-tempo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(201,151,58,0.07);
+  border: 1px solid rgba(201,151,58,0.18);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dourado-claro);
+  letter-spacing: 0.04em;
+}
+
+.liturgia-tempo i {
+  color: var(--dourado);
+  font-size: 0.9rem;
+}
+
+/* ── Abas ── */
+.liturgia-tabs {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid rgba(201,151,58,0.15);
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+.liturgia-tab {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-medio);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: var(--transition);
+  font-family: var(--font-body);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.liturgia-tab:hover {
+  color: var(--dourado);
+  background: rgba(201,151,58,0.05);
+}
+
+.liturgia-tab.ativo {
+  color: var(--dourado);
+  border-bottom-color: var(--dourado);
+  background: rgba(201,151,58,0.06);
+}
+
+/* ── Painéis ── */
+.liturgia-panel { display: none; }
+
+.liturgia-panel.ativo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Bloco de leitura / oração ── */
+.liturgia-bloco {
+  background: white;
+  border: 1px solid rgba(201,151,58,0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  transition: var(--transition);
+}
+
+.liturgia-bloco:hover {
+  border-color: rgba(201,151,58,0.28);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transform: translateY(-1px);
+}
+
+.liturgia-bloco-titulo {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.liturgia-bloco-titulo::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201,151,58,0.3), transparent);
+}
+
+.liturgia-bloco-subtitulo {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--texto-medio);
+  margin-bottom: 0.6rem;
+  font-style: italic;
+}
+
+.liturgia-referencia {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--dourado);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.liturgia-versiculo {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  color: var(--texto-medio);
+  line-height: 1.9;
+}
+
+.liturgia-salmo-texto {
+  white-space: pre-line;
+  color: var(--texto-escuro);
+}
+
+.liturgia-oracao-texto {
+  font-style: italic;
+}
+
+/* ── Antífona / Refrão ── */
+.liturgia-antifona {
+  background: linear-gradient(135deg, var(--azul-noite), var(--azul-medio));
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.liturgia-antifona-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 0.5rem;
+}
+
+.liturgia-antifona p:not(.liturgia-antifona-label) {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Bloco dark (Mistérios, etc) ── */
+.liturgia-bloco-dark {
+  background: linear-gradient(135deg, var(--azul-noite), var(--azul-medio));
+  border: 1px solid rgba(201,151,58,0.18);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+}
+
+.liturgia-bloco-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* ── Mistérios ── */
+.misterios-titulo {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.misterios-titulo em {
+  color: var(--dourado);
+  font-style: italic;
+}
+
+.misterios-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.misterio-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(201,151,58,0.06);
+  border: 1px solid rgba(201,151,58,0.14);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  transition: var(--transition);
+}
+
+.misterio-item:hover {
+  background: rgba(201,151,58,0.11);
+  border-color: rgba(201,151,58,0.3);
+}
+
+.misterio-numero {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+  color: var(--azul-noite);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+/* ── Fontes externas ── */
+.liturgia-fontes {
+  background: var(--creme);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(201,151,58,0.1);
+  padding: 1.75rem 2rem;
+}
+
+.liturgia-fontes-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.liturgia-fonte-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: white;
+  border: 1px solid rgba(201,151,58,0.2);
+  border-radius: 50px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--texto-escuro);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+}
+
+.liturgia-fonte-link:hover {
+  background: rgba(201,151,58,0.08);
+  border-color: rgba(201,151,58,0.4);
+  color: var(--dourado);
+  transform: translateY(-1px);
+}
+
+.liturgia-fonte-link i {
+  color: var(--dourado);
+  font-size: 0.7rem;
+}
+
+/* ── Loading ── */
+.liturgia-loading {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: var(--texto-medio);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.liturgia-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(201,151,58,0.15);
+  border-top-color: var(--dourado);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ── Fallback ── */
+.liturgia-fallback {
+  background: white;
+  border: 1px solid rgba(201,151,58,0.15);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.liturgia-fallback-icone {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.liturgia-fallback-titulo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--texto-escuro);
+  font-weight: 700;
+  margin: 0;
+}
+
+.liturgia-fallback-desc {
+  color: var(--texto-medio);
+  line-height: 1.8;
+  max-width: 400px;
+  margin: 0;
+}
+
+.liturgia-fallback-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 340px;
+}
+
+.btn-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(201,151,58,0.25);
+  background: rgba(201,151,58,0.07);
+  color: var(--texto-medio);
+  transition: var(--transition);
+}
+
+.btn-fallback:hover {
+  background: rgba(201,151,58,0.14);
+  border-color: rgba(201,151,58,0.45);
+  color: var(--dourado);
+  transform: translateY(-1px);
+}
+
+.btn-fallback-primario {
+  background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+  color: var(--azul-noite) !important;
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(201,151,58,0.35);
+}
+
+.btn-fallback-primario:hover {
+  box-shadow: 0 6px 28px rgba(201,151,58,0.5);
+  color: var(--azul-noite) !important;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 1023px) {
+  .liturgia-hero { padding: 8rem 1rem 3rem; }
+}
+
+@media (max-width: 768px) {
+  .liturgia-container { padding: 2rem 1rem 4rem; gap: 1.25rem; }
+  .liturgia-bloco     { padding: 1.5rem 1.25rem; }
+  .liturgia-bloco-dark{ padding: 1.5rem 1.25rem; }
+  .liturgia-fontes    { padding: 1.25rem; }
+  .liturgia-tab       { padding: 0.55rem 0.85rem; font-size: 0.72rem; }
+  .liturgia-data-nav  { gap: 0.5rem; }
+  .liturgia-data-badge{ font-size: 0.7rem; padding: 0.4rem 0.9rem; }
+}

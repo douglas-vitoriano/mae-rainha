@@ -1,0 +1,83 @@
+nome: Grupo de Oração Mãe Rainha
+comunidade: Comunidade Nossa Senhora Aparecida
+paroquia: Paróquia Santa Cruz
+subtitulo: Adoração · Oração · Louvor
+
+missao: >-
+  Unidos em oração e fé, buscamos o crescimento espiritual por meio do Imaculado Coração 
+  da Bem-Aventurada Virgem Maria. 
+  Em nossos encontros semanais de louvor, pregação da Palavra e clamor, formamos uma família 
+  que caminha junta em busca de uma vida plena em Cristo.
+
+visao: >-
+  Ser um movimento carismatico que transforma vidas pelo poder da oração e da
+  devoção mariana, levando o amor de Deus a cada coração que nos encontra.
+
+valores:
+  - titulo: Adoração
+    icone: /images/svg/eucaristia.svg
+    texto: Colocamos Cristo Santíssimo Sacramento como centro de tudo que fazemos, buscando a presença de Deus em cada encontro.
+
+  - titulo: Pregação
+    icone: /images/svg/biblia.svg
+    texto: Somos uma família unida pelo amor de Cristo, recebendo em nossos encontros a palavra de Deus.
+
+  - titulo: Louvor
+    icone: /images/svg/pomba.svg
+    texto: Acreditamos na transformação constante pelo Espírito Santo que age em cada vida com poder.
+
+  - titulo: Devoção Mariana
+    icone: /images/svg/virgem_maria.svg
+    texto: Maria é nossa mãe e guia, sempre nos conduzindo ao seu Filho Jesus com ternura.
+
+encontros:
+  - evento: Santa Missa e Celebrações
+    horarios:
+      - "Terças-feiras, às 06h30"
+      - "Sábados, às 18h30"
+    local: Comunidade Nossa Senhora Aparecida
+    descricao: |
+      “Seria mais fácil o mundo sobreviver sem o sol do que sem a Santa Missa. Fiquem perto de Jesus no Santíssimo Sacramento.”
+      <em>— São Padre Pio de Pietrelcina</em>
+      
+  - evento: Louvor e Pregação
+    horarios: 
+      - Terças-feiras, às 19h 
+    local: Comunidade Nossa Senhora Aparecida
+    descricao: |
+      "Quem fala em língua estranha não fala aos homens, senão a Deus, pois ninguém o entende; em espírito, fala mistérios."
+      <em>— São Paulo na 1 Cor 14,2</em>
+
+  - evento: Adorão ao Santíssimo
+    horarios: 
+      - Quintas-feiras, às 19h
+    local: Comunidade Nossa Senhora Aparecida
+    descricao: |
+      “Entre todas as devoções, depois dos sacramentos, a adoração a Jesus no Santíssimo Sacramento é a primeira de todas.”
+      <em>— Santo Afonso Maria de Ligório</em>
+
+testemunhos:
+  - nome: Ana Paula Souza
+    texto: >-
+      Cheguei ao grupo passando por um momento muito difícil. Encontrei aqui não
+      só oração, mas uma família que me acolheu com amor e me ajudou a redescobrir
+      minha fé de um jeito completamente novo.
+  - nome: Ricardo Mendes
+    texto: >-
+      Há cinco anos faço parte desta comunidade e posso dizer que minha vida
+      transformou completamente. A oração em grupo tem um poder que vai além
+      de qualquer coisa que já vivi antes.
+  - nome: Carla Ferreira
+    texto: >-
+      O Grupo Mãe Rainha foi o instrumento que Deus usou para me aproximar
+      de Nossa Senhora. Hoje entendo o quanto Maria nos conduz ao coração de Jesus.
+
+contato:
+  email: contato@maerainhaoracao.com.br
+  telefone: "(11) 99999-9999"
+  instagram: "@go.mae_rainha"
+  link_instagram: "https://www.instagram.com/go.mae_rainha?igsh=b3Z4bTdmMGliMXpx"
+  whatsapp: "5511999999999"
+  endereco: "Rua Lorena, 514 - Vila Engenho Novo, Barueri - SP, 06416-230"
+  maps_link: "https://maps.app.goo.gl/hTxWjDWCcUrfRYMw7"
+  facebook: "https://www.facebook.com/profile.php?id=100067310601327&locale=pt_BR"

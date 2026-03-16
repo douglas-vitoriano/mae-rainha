@@ -1,0 +1,54 @@
+<section class="secao secao-escura" id="encontros">
+  <div class="container">
+    <div class="has-text-centered mb-6">
+      <p class="section-label reveal">Agenda</p>
+      <h2 class="titulo-secao claro reveal">
+        Nossos <em style="color: var(--dourado); font-style:italic">Encontros</em>
+      </h2>
+      <div class="divisor-dourado centrado reveal"></div>
+      <p class="reveal" style="color: rgba(255,255,255,0.55); max-width: 500px; margin: 0 auto; line-height: 1.8;">
+        Venha viver momentos de oração, louvor e pregação conosco. <br>
+        Todos são bem-vindos — não importa onde você está na sua jornada de fé.
+      </p>
+    </div>
+    <div class="columns is-centered is-multiline">
+      <% site.data.grupo.encontros.each_with_index do |encontro, i| %>
+      <div class="column is-4">
+        <div class="encontro-card reveal reveal-delay-<%= i + 1 %>">
+          <span class="encontro-dia"><%= encontro.evento %></span>
+          <div class="encontro-horario">
+            <% encontro.horarios.each do |horario| %>
+              <div>
+                <i class="fas fa-clock" style="margin-right:0.4rem; color: var(--dourado)"></i>
+                <%= horario %>
+              </div>
+            <% end %>
+          </div>
+          <div class="encontro-local">
+            <i class="fas fa-map-marker-alt" style="color: var(--dourado)"></i>
+            <%= encontro.local %>
+          </div>
+          <p class="encontro-desc"><%= encontro.descricao.html_safe %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="reveal mt-6">
+      <div style="
+        background: rgba(201,151,58,0.1);
+        border: 1px solid rgba(201,151,58,0.3);
+        border-radius: 1rem;
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;">
+        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0; flex: 1;">
+          <strong style="color: var(--dourado-claro); font-size: 1.5rem;">Primeira vez?<br></strong>
+          Chegue com 15 minutos de antecedência para rezar o Santo Terço e ser recebido com carinho pela nossa equipe de acolhida.<br>
+          Não precisa se inscrever — é só vir!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

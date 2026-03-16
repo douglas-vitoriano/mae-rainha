@@ -1,0 +1,27 @@
+<section class="secao secao-creme" id="testemunhos">
+  <div class="container">
+    <div class="has-text-centered mb-6">
+      <p class="section-label reveal">Testemunhos</p>
+      <h2 class="titulo-secao escuro reveal">
+        O que dizem quem <em style="font-style:italic; color: var(--dourado)">viveu</em>
+      </h2>
+      <div class="divisor-dourado centrado reveal"></div>
+    </div>
+    <div class="columns is-multiline">
+      <% site.data.grupo.testemunhos.each_with_index do |t, i| %>
+      <div class="column is-4">
+        <div class="testemunho-card reveal reveal-delay-<%= i + 1 %>">
+          <p class="testemunho-texto">"<%= t.texto %>"</p>
+          <div class="testemunho-autor">
+            <div class="autor-avatar"><%= t.nome[0] %></div>
+            <div>
+              <p class="autor-nome"><%= t.nome %></p>
+              <div class="estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

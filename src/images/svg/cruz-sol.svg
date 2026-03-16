@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="40.0 144.3 96.4 96.4"
+     width="96" height="96">
+<g xmlns="http://www.w3.org/2000/svg" id="cross-sun_1_">
+		<g id="label_3_">
+			<circle fill="#FFCD4F" cx="88.2" cy="192.5" r="48.2" />
+		</g>
+		<g id="cross-sun">
+			<g id="fill_3_">
+				<g>
+					<circle fill="#FFFFFF" cx="88.2" cy="187.7" r="18.3" />
+				</g>
+				<g>
+					<polygon fill="#915E45" points="103.1,183.9 92.3,183.9 92.3,173.1 84.2,173.1 84.2,183.9 73.3,183.9 73.3,192.1 84.2,192.1        84.2,220.5 92.3,220.5 92.3,192.1 103.1,192.1      " />
+				</g>
+			</g>
+			<g id="line_4_">
+				<g>
+					<path fill="#3A3D3E" d="M93.2,221.4h-10V193H72.4v-10h10.8v-10.8h10V183h10.8v10H93.2V221.4z M85.1,219.5h6.2v-28.4h10.8v-6.2       H91.3v-10.8h-6.2v10.8H74.3v6.2h10.8V219.5z" />
+				</g>
+				<g>
+					<g>
+						<rect x="87.2" y="165.2" fill="#3A3D3E" width="1.9" height="3.1" />
+					</g>
+					<g>
+						<rect x="106.8" y="185.9" fill="#3A3D3E" width="3.1" height="1.9" />
+					</g>
+					<g>
+						<rect x="66.5" y="185.9" fill="#3A3D3E" width="3.1" height="1.9" />
+					</g>
+					<g>
+						
+							<rect x="100.9" y="171.7" transform="matrix(0.7069 -0.7074 0.7074 0.7069 -92.0718 123.0845)" fill="#3A3D3E" width="3.1" height="1.9" />
+					</g>
+					<g>
+						
+							<rect x="72.4" y="200.2" transform="matrix(0.7074 -0.7069 0.7069 0.7074 -120.525 111.1388)" fill="#3A3D3E" width="3.1" height="1.9" />
+					</g>
+					<g>
+						
+							<rect x="101.5" y="199.6" transform="matrix(0.7069 -0.7073 0.7073 0.7069 -112.2241 131.4112)" fill="#3A3D3E" width="1.9" height="3.1" />
+					</g>
+					<g>
+						
+							<rect x="73" y="171.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -100.4024 102.8601)" fill="#3A3D3E" width="1.9" height="3.1" />
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	
+</svg>
