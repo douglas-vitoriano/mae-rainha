@@ -8,6 +8,7 @@ RUN apt-get update && \
       libssl-dev \
       libreadline-dev \
       zlib1g-dev && \
+      libyaml-dev && \ 
     rm -rf /var/lib/apt/lists/*
 
 RUN curl https://get.volta.sh | bash
