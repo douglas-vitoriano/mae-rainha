@@ -1,11 +1,19 @@
+.env
+*.log
+_cache/
+
 # Bridgetown
 output
 .bridgetown-cache
 .bridgetown-metadata
+.bridgetown-webpack
 .routes.json
+/bridgetown.config.yml
 
 # Dependency folders
 node_modules
+bower_components
+vendor
 
 # Caches
 .sass-cache
@@ -32,11 +40,7 @@ yarn-debug.log*
 # Yarn Integrity file
 .yarn-integrity
 
-# Ignore all tempfiles.
-/tmp/*
-!/tmp/.keep
-
-# Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
+# Node.js
+node_modules/
+yarn.lock
+package-lock.json
