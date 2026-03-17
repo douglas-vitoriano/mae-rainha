@@ -1,0 +1,82 @@
+grupo: ordinario
+ordem: 3
+titulo: "Oração Eucarística III"
+
+secoes:
+  - tipo: dialogo
+
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, vós sois Santo, ó Deus do universo,
+          e tudo o que criastes proclama o vosso louvor.
+      - papel: celebrante
+        texto: |
+          Porque, por Jesus Cristo, vosso Filho e Senhor nosso,
+          e pela força do Espírito Santo,
+          dais vida e santidade a todas as coisas
+          e não cessais de reunir para vós um povo
+          que vos ofereça em toda parte,
+          do nascer ao pôr do sol,
+          um sacrifício perfeito.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Por isso, ó Pai, nós vos suplicamos:
+          santificai pelo Espírito Santo
+          as oferendas que vos apresentamos
+          para serem consagradas.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebrando agora, ó Pai,
+          o memorial da paixão redentora do vosso Filho,
+          da sua gloriosa ressurreição e ascensão ao céu,
+          nós vos oferecemos este sacrifício vivo e santo.
+      - papel: assembleia
+        texto: "Aceitai, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: |
+          Olhai com bondade a oblação da vossa Igreja
+          e concedei que,
+          alimentando-nos com o Corpo e o Sangue do vosso Filho,
+          nos tornemos em Cristo
+          um só corpo e um só espírito.
+      - papel: assembleia
+        texto: "O Espírito nos una num só corpo!"
+      - papel: celebrante
+        texto: |
+          Que o mesmo Espírito faça de nós
+          uma eterna oferenda
+          com a Virgem Maria,
+          São José,
+          os Apóstolos
+          e todos os Santos.
+      - papel: assembleia
+        texto: "Fazei de nós uma perfeita oferenda!"
+
+  - tipo: doxologia

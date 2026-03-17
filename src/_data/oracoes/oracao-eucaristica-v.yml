@@ -1,0 +1,88 @@
+grupo: ordinario
+ordem: 5
+titulo: "Oração Eucarística V"
+
+secoes:
+  - tipo: dialogo
+
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          É justo e nos faz todos ser mais santos
+          louvar a vós, ó Pai, no mundo inteiro,
+          de dia e de noite,
+          agradecendo com Cristo,
+          vosso Filho, nosso irmão.
+      - papel: celebrante
+        texto: |
+          É ele o sacerdote verdadeiro
+          que sempre se oferece por nós todos,
+          mandando que se faça a mesma coisa
+          que fez naquela ceia derradeira.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Ó Pai,
+          mandai vosso Espírito Santo,
+          a fim de que as nossas ofertas
+          se mudem no Corpo e no Sangue
+          de nosso Senhor Jesus Cristo.
+      - papel: assembleia
+        texto: "Mandai vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+    opcoes:
+      - |
+        Toda vez que comemos deste pão,
+        toda vez que bebemos deste vinho,
+        recordamos a paixão de Jesus Cristo
+        e ficamos esperando sua vinda.
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Recordando, ó Pai,
+          a paixão de Jesus,
+          sua ressurreição e ascensão,
+          nós vos oferecemos
+          este pão que alimenta
+          e este vinho que nos salva.
+      - papel: assembleia
+        texto: "Recebei, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: "O Espírito nos una num só corpo para sermos um só povo em seu amor."
+      - papel: assembleia
+        texto: "O Espírito nos una num só corpo!"
+      - papel: celebrante
+        texto: "Protegei vossa Igreja que caminha nas estradas do mundo rumo ao céu."
+      - papel: assembleia
+        texto: "Caminhamos na estrada de Jesus!"
+      - papel: celebrante
+        texto: |
+          Esperamos entrar na vida eterna
+          com Maria, Mãe de Deus,
+          os Apóstolos
+          e todos os Santos.
+      - papel: assembleia
+        texto: "Esperamos entrar na vida eterna!"
+
+  - tipo: doxologia

@@ -1,0 +1,129 @@
+grupo: ordinario
+ordem: 2
+titulo: "Oração Eucarística II"
+
+secoes:
+  - tipo: dialogo
+
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, é digno e justo,
+          é nosso dever e salvação dar-vos graças
+          sempre e em todo lugar,
+          Senhor, Pai santo,
+          por vosso amado Filho, Jesus Cristo.
+      - papel: celebrante
+        texto: |
+          Ele é a vossa Palavra,
+          pela qual tudo criastes.
+          Ele é o nosso Salvador e Redentor,
+          que se encarnou pelo Espírito Santo
+          e nasceu da Virgem Maria.
+      - papel: celebrante
+        texto: |
+          Ele, para cumprir a vossa vontade
+          e adquirir para vós um povo santo,
+          estendeu os braços na hora da sua paixão,
+          a fim de vencer a morte
+          e manifestar a ressurreição.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, ó Pai, vós sois Santo,
+          fonte de toda santidade.
+      - papel: celebrante
+        texto: |
+          Santificai, pois, estes dons,
+          derramando sobre eles o vosso Espírito,
+          a fim de que se tornem para nós
+          o Corpo ✠ e o Sangue
+          de nosso Senhor Jesus Cristo.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    introducao: |
+      Estando para ser entregue
+      e abraçando livremente a paixão,
+      Jesus tomou o pão,
+      pronunciou a bênção de ação de graças,
+      partiu e o deu a seus discípulos, dizendo:
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    introducao: |
+      Do mesmo modo,
+      no fim da ceia,
+      ele tomou o cálice em suas mãos
+      e, dando graças novamente,
+      o entregou a seus discípulos, dizendo:
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebrando, pois, o memorial
+          da morte e ressurreição do vosso Filho,
+          nós vos oferecemos, ó Pai,
+          o Pão da vida e o Cálice da salvação;
+          e vos agradecemos
+          porque nos tornastes dignos
+          de estar aqui na vossa presença e vos servir.
+      - papel: assembleia
+        texto: "Aceitai, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: |
+          Suplicantes, vos pedimos
+          que, participando do Corpo e Sangue de Cristo,
+          sejamos reunidos pelo Espírito Santo
+          num só corpo.
+      - papel: assembleia
+        texto: "O Espírito nos una num só corpo!"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos, ó Pai,
+          da vossa Igreja que se faz presente pelo mundo inteiro;
+          que ela cresça na caridade,
+          em comunhão com o Papa N.,
+          com o nosso Bispo N.,
+          os bispos do mundo inteiro,
+          os presbíteros, os diáconos
+          e todos os ministros do vosso povo.
+      - papel: assembleia
+        texto: "Lembrai-vos, ó Pai, da vossa Igreja!"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos também
+          dos nossos irmãos e irmãs
+          que adormeceram na esperança da ressurreição
+          e de todos os que partiram desta vida.
+      - papel: assembleia
+        texto: "Concedei-lhes, ó Senhor, a luz eterna!"
+      - papel: celebrante
+        texto: |
+          Enfim, nós vos pedimos,
+          tende piedade de todos nós
+          e dai-nos participar da vida eterna,
+          com a Virgem Maria, Mãe de Deus,
+          São José, seu esposo,
+          os Apóstolos
+          e todos os Santos
+          que neste mundo viveram na vossa amizade.
+
+  - tipo: doxologia

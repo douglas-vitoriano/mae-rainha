@@ -1,0 +1,61 @@
+id: oracao_eucaristica_reconciliacao_1
+titulo: "Oração Eucarística sobre a Reconciliação I"
+grupo: reconciliacao
+ordem: 1
+
+secoes:
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, é digno e justo
+          dar-vos graças sempre, Senhor, Pai santo,
+          Deus eterno e todo-poderoso.
+          Constantemente nos chamais
+          a uma vida mais plena
+          e sempre ofereceis o perdão.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Derramai sobre estas oferendas
+          a força do vosso Espírito,
+          para que se tornem
+          o Corpo ✠ e o Sangue
+          de Jesus Cristo.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Fazendo memória de Cristo,
+          celebramos sua morte e ressurreição
+          e vos oferecemos o sacrifício que reconcilia o mundo.
+      - papel: assembleia
+        texto: "Aceitai, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: |
+          Concedei que, pela força do Espírito Santo,
+          todos os que participam deste pão e deste cálice
+          sejam reunidos em Cristo num só corpo.
+      - papel: assembleia
+        texto: "O Espírito nos una num só corpo!"
+
+  - tipo: doxologia

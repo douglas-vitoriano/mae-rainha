@@ -1,0 +1,32 @@
+titulo: "Bênção Final II"
+subtitulo: "Bênção Solene"
+tempo_liturgico: "Tempo Comum"
+tipo: bencao_final
+
+partes:
+  - papel: celebrante
+    texto: >
+      Deus todo-poderoso vos abençoe na sua bondade
+      e infunda em vós a sabedoria da salvação.
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: >
+      Sempre vos alimente com os ensinamentos da fé
+      e vos faça perseverar nas boas obras.
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: >
+      Oriente para ele os vossos passos
+      e vos mostre o caminho da caridade e da paz.
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: "Abençoe-vos Deus todo-poderoso, Pai e Filho ✠ e Espírito Santo."
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: "Glorificai o Senhor com vossa vida. Ide em paz, e o Senhor vos acompanhe."
+  - papel: assembleia
+    texto: "Graças a Deus!"

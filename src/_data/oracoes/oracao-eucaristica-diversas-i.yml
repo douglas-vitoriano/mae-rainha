@@ -1,0 +1,158 @@
+grupo: diversas
+ordem: 1
+titulo: "Oração Eucarística para Diversas Circunstâncias I"
+subtitulo: "A Igreja a Caminho da Unidade"
+nota: >
+  Convém usar com formulários de Missa pela Igreja, pelo Papa, pelo Bispo,
+  para eleição do Papa ou Bispo, por um Concílio ou Sínodo, pelos sacerdotes,
+  pelo próprio sacerdote, pelos ministros da Igreja e reuniões espirituais.
+
+secoes:
+  - tipo: dialogo
+
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, é digno e justo,
+          é nosso dever e salvação dar-vos graças
+          e cantar-vos um hino de glória e louvor,
+          Senhor, Pai de infinita bondade.
+      - papel: celebrante
+        texto: |
+          Pela palavra do Evangelho do vosso Filho
+          reunistes uma só Igreja
+          de todos os povos, línguas e nações.
+          Por ela, vivificada pela força do vosso Espírito,
+          não deixais de congregar na unidade
+          todo o gênero humano.
+      - papel: celebrante
+        texto: |
+          Manifestando a aliança do vosso amor,
+          a Igreja irradia sem cessar
+          a alegre esperança do vosso reino
+          e brilha como sinal da vossa fidelidade
+          que prometestes para sempre
+          em Cristo Jesus, Senhor nosso.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, vós sois Santo e digno de louvor,
+          ó Deus, que amais os seres humanos
+          e sempre os acompanhais no caminho da vida.
+      - papel: celebrante
+        texto: |
+          Na verdade, é bendito o vosso Filho,
+          presente no meio de nós,
+          quando nos reunimos por seu amor.
+      - papel: celebrante
+        texto: |
+          Como outrora aos discípulos de Emaús,
+          ele nos revela as Escrituras
+          e parte o Pão para nós.
+      - papel: assembleia
+        texto: "Bendito o vosso Filho, presente entre nós!"
+      - papel: celebrante
+        texto: |
+          Por isso, nós vos suplicamos, Pai de bondade:
+          enviai o vosso Espírito Santo
+          para que santifique estes dons do pão e do vinho,
+          e se tornem para nós
+          o Corpo e o Sangue
+          de nosso Senhor Jesus Cristo.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    introducao: |
+      Na véspera de sua paixão,
+      na noite da última Ceia,
+      Jesus tomou o pão,
+      pronunciou a bênção de ação de graças,
+      partiu e o deu a seus discípulos, dizendo:
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    introducao: |
+      Do mesmo modo,
+      no fim da ceia,
+      ele tomou o cálice em suas mãos,
+      deu-vos graças novamente
+      e o entregou a seus discípulos, dizendo:
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS,
+      PARA A REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebrando, pois, ó Pai santo,
+          o memorial da Páscoa de Cristo,
+          vosso Filho, nosso Salvador,
+          anunciamos a obra do vosso amor;
+          pela paixão e morte de cruz,
+          vós o fizestes entrar na glória da ressurreição
+          e o colocastes à vossa direita.
+          Enquanto esperamos sua vinda gloriosa,
+          nós vos oferecemos
+          o Pão da vida e o Cálice da bênção.
+      - papel: assembleia
+        texto: "Aceitai, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: |
+          Olhai com bondade a oferta da vossa Igreja;
+          nela vos apresentamos o sacrifício pascal de Cristo.
+          Concedei que, pela força do Espírito do vosso amor,
+          sejamos contados, agora e por toda a eternidade,
+          entre os membros do vosso Filho,
+          cujo Corpo e Sangue comungamos.
+      - papel: assembleia
+        texto: "O Espírito nos una num só corpo!"
+      - papel: celebrante
+        texto: |
+          Renovai, ó Pai, com a luz do Evangelho, a vossa Igreja.
+          Fortalecei o vínculo da unidade
+          entre os fiéis e os pastores do vosso povo,
+          em comunhão com o nosso Papa,
+          o nosso Bispo e toda a ordem episcopal.
+          Assim, neste mundo dilacerado por discórdias,
+          o vosso povo brilhe como sinal profético
+          de unidade e concórdia.
+      - papel: assembleia
+        texto: "Confirmai na unidade a vossa Igreja!"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos dos nossos irmãos e irmãs
+          que adormeceram na paz do vosso Cristo,
+          e de todos os falecidos,
+          cuja fé só vós conhecestes.
+          Acolhei-os na luz da vossa face
+          e, na ressurreição,
+          concedei-lhes a plenitude da vida.
+      - papel: assembleia
+        texto: "Concedei-lhes, ó Senhor, a luz eterna!"
+      - papel: celebrante
+        texto: |
+          Concedei também a nós,
+          no fim da nossa peregrinação terrestre,
+          chegarmos todos à morada eterna,
+          onde viveremos para sempre convosco
+          e, com a Bem-aventurada Virgem Maria,
+          Mãe de Deus, os Apóstolos e Mártires,
+          e todos os Santos,
+          vos louvaremos e glorificaremos,
+          por Jesus Cristo, vosso Filho.
+
+  - tipo: doxologia

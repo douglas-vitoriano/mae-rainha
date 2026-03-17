@@ -11,14 +11,15 @@ module LiturgiaAPI
 
     if response.is_a?(Net::HTTPSuccess)
       json = JSON.parse(response.body)
-      return json.is_a?(Array) ? json : [json]
+      lista = json.is_a?(Array) ? json : [json]
+      lista.reject { |l| l["erro"] }
     else
       Bridgetown.logger.error "Liturgia API", "Erro HTTP: #{response.code}"
-      return []
+      []
     end
   rescue StandardError => e
     Bridgetown.logger.error "Liturgia API", "Exceção: #{e.message}"
-    return []
+    []
   end
 end
 
@@ -27,6 +28,13 @@ Bridgetown::Hooks.register :site, :pre_render do |site|
 
   site.data["liturgia_hoje"]    = liturgias.first
   site.data["liturgia_periodo"] = liturgias.each_with_object({}) do |l, h|
-    h[l["data"]] = l
+    chave = begin
+      Date.strptime(l["data"], "%d/%m/%Y").strftime("%d/%m/%Y")
+    rescue
+      l["data"]
+    end
+    h[chave] = l
   end
+
+  Bridgetown.logger.info "Liturgia API", "#{liturgias.size} dia(s) carregado(s)"
 end

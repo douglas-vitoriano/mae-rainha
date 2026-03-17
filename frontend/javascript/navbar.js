@@ -1,4 +1,19 @@
 export function initNavbar() {
+  const navbar = document.querySelector('.navbar-principal')
+
+  // ── Altura dinâmica da navbar → CSS variable ──
+  function atualizarAlturaNavbar() {
+    if (!navbar) return
+    document.documentElement.style.setProperty(
+      '--navbar-height',
+      `${navbar.offsetHeight}px`
+    )
+  }
+
+  atualizarAlturaNavbar()
+  window.addEventListener('resize', atualizarAlturaNavbar, { passive: true })
+
+  // ── Burger ──
   document.querySelectorAll('.navbar-burger').forEach(burger => {
     burger.addEventListener('click', () => {
       const target =
@@ -11,14 +26,17 @@ export function initNavbar() {
         burger.classList.contains('is-active') ? 'true' : 'false'
       )
       if (target) target.classList.toggle('is-active')
+
+      // Recalcula após animação do menu mobile
+      setTimeout(atualizarAlturaNavbar, 50)
     })
   })
 
-  const navbar = document.querySelector('.navbar-principal')
   if (!navbar) return
 
-  let lastY    = window.scrollY
-  let ticking  = false
+  // ── Hide/show no scroll ──
+  let lastY   = window.scrollY
+  let ticking = false
 
   const update = () => {
     const current = window.scrollY
@@ -38,8 +56,8 @@ export function initNavbar() {
       navbar.classList.add('navbar-visivel')
     }
 
-    lastY    = current
-    ticking  = false
+    lastY   = current
+    ticking = false
   }
 
   window.addEventListener('scroll', () => {
@@ -49,8 +67,9 @@ export function initNavbar() {
     }
   }, { passive: true })
 
-  const sections  = document.querySelectorAll('section[id]')
-  const navLinks  = document.querySelectorAll('.navbar-item[href^="#"]')
+  // ── Active link por seção ──
+  const sections = document.querySelectorAll('section[id]')
+  const navLinks = document.querySelectorAll('.navbar-item[href^="#"]')
 
   if (sections.length && navLinks.length) {
     const linkMap = {}

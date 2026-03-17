@@ -1,0 +1,37 @@
+titulo: "Bênção Final III"
+subtitulo: "Tempo Pascal"
+tempo_liturgico: "Tempo Pascal"
+tipo: bencao_final
+
+partes:
+  - papel: celebrante
+    texto: >
+      Deus, que pela ressurreição do seu Filho único,
+      vos deu a graça da redenção
+      e vos adotou como filhos e filhas,
+      vos conceda a alegria de sua bênção.
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: >
+      Aquele que, por sua morte,
+      vos deu a eterna liberdade,
+      vos conceda, por sua graça, a herança eterna.
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: >
+      E, vivendo agora retamente,
+      possais no céu unir-vos a Deus,
+      para o qual, pela fé,
+      já ressuscitastes no batismo.
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: "Abençoe-vos Deus todo-poderoso, Pai e Filho ✠ e Espírito Santo."
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: "Glorificai o Senhor com vossa vida. Ide em paz, e o Senhor vos acompanhe."
+  - papel: assembleia
+    texto: "Graças a Deus."

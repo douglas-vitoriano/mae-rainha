@@ -1,0 +1,90 @@
+titulo: "Rito da Comunhão"
+tipo: rito
+
+pai_nosso:
+  introducao:
+    - papel: celebrante
+      texto: >
+        Obedientes à palavra do Salvador
+        e formados por seu divino ensinamento,
+        ousamos dizer:
+  oracao:
+    - papel: assembleia
+      texto: |
+        Pai nosso que estais nos céus,
+        santificado seja o vosso nome;
+        venha a nós o vosso reino,
+        seja feita a vossa vontade,
+        assim na terra como no céu.
+        O pão nosso de cada dia nos dai hoje;
+        perdoai-nos as nossas ofensas,
+        assim como nós perdoamos a quem nos tem ofendido;
+        e não nos deixeis cair em tentação,
+        mas livrai-nos do mal.
+  embolismo:
+    - papel: celebrante
+      texto: >
+        Livrai-nos de todos os males, ó Pai, e dai-nos hoje a vossa paz.
+        Ajudados pela vossa misericórdia, sejamos sempre livres do pecado
+        e protegidos de todos os perigos, enquanto, vivendo a esperança,
+        aguardamos a vinda de Cristo Salvador.
+  doxologia:
+    - papel: assembleia
+      texto: "Vosso é o Reino, o poder e a glória para sempre!"
+
+oracao_pela_paz:
+  - papel: celebrante
+    texto: >
+      Senhor Jesus Cristo, dissestes aos vossos apóstolos:
+      eu vos deixo a paz, eu vos dou a minha paz.
+      Não olheis os nossos pecados,
+      mas a fé que anima vossa Igreja;
+      dai-lhe, segundo o vosso desejo,
+      a paz e a unidade.
+      Vós, que sois Deus, com o Pai e o Espírito Santo.
+  - papel: assembleia
+    texto: "Amém!"
+
+rito_da_paz:
+  - papel: celebrante
+    texto: "A paz do Senhor esteja sempre convosco."
+  - papel: assembleia
+    texto: "O amor de Cristo nos uniu."
+  - papel: rubrica
+    texto: "O sacerdote convida à troca de paz: «Irmãos e irmãs, saudai-vos em Cristo Jesus.» Todos se cumprimentam."
+
+fracao_do_pao:
+  introducao:
+    - papel: celebrante
+      texto: >
+        Esta união do Corpo e do Sangue de Jesus,
+        o Cristo e Senhor nosso,
+        que vamos receber,
+        nos sirva para a vida eterna.
+  cordeiro:
+    - papel: assembleia
+      texto: |
+        Cordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós.
+        Cordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós.
+        Cordeiro de Deus, que tirais o pecado do mundo, dai-nos a paz.
+
+comunhao:
+  oracao_privada:
+    - papel: celebrante
+      texto: >
+        Senhor Jesus Cristo, o vosso Corpo e o vosso Sangue,
+        que vou receber, não se tornem causa de juízo e condenação;
+        mas, por vossa bondade,
+        sejam sustento e remédio para minha vida.
+  convite:
+    - papel: celebrante
+      texto: |
+        Provai e vede como o Senhor é bom;
+        feliz de quem nele encontra seu refúgio.
+        Eis o Cordeiro de Deus,
+        que tira o pecado do mundo.
+  resposta:
+    - papel: assembleia
+      texto: >
+        Senhor, eu não sou digno/a de que entreis em minha morada,
+        mas dizei uma palavra e serei salvo/a.

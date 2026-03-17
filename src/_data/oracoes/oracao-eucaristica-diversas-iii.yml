@@ -1,0 +1,67 @@
+id: oracao_eucaristica_diversas_3
+titulo: "Oração Eucarística para Diversas Circunstâncias III"
+subtitulo: "Jesus, Caminho para o Pai"
+grupo: diversas
+ordem: 3
+nota: >
+  Convém usar com os formulários de Missa pela evangelização dos povos,
+  pelos cristãos perseguidos, pela pátria ou pela cidade, pelos governantes,
+  pelo encontro de chefes das nações, no início do ano civil, pelo progresso
+  dos povos e quando houver sintonia com a Liturgia da Palavra.
+
+secoes:
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Pelo vosso Verbo criastes o universo
+          e tudo governais com equidade.
+          Vós nos destes vosso Filho feito carne,
+          como mediador entre vós e os homens.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, vós sois Santo e digno de louvor,
+          ó Deus, que amais os seres humanos
+          e sempre os acompanhais no caminho da vida.
+      - papel: assembleia
+        texto: "Bendito o vosso Filho, presente entre nós!"
+      - papel: celebrante
+        texto: "Enviai o vosso Espírito Santo para santificar estes dons."
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebrando o memorial da Páscoa de Cristo,
+          anunciamos a obra do vosso amor.
+      - papel: celebrante
+        texto: |
+          Vivificai-nos no Espírito,
+          tornai-nos semelhantes à imagem do vosso Filho.
+      - papel: assembleia
+        texto: "Confirmai na unidade a vossa Igreja!"
+      - papel: celebrante
+        texto: "Tornai-nos atentos às necessidades de todas as pessoas."
+      - papel: assembleia
+        texto: "Ajudai-nos a criar um mundo novo."
+
+  - tipo: doxologia

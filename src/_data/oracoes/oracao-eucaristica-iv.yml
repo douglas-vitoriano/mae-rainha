@@ -1,0 +1,79 @@
+grupo: ordinario
+ordem: 4
+titulo: "Oração Eucarística IV"
+
+secoes:
+  - tipo: dialogo
+
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, ó Pai,
+          é nosso dever dar-vos graças,
+          é nossa salvação dar-vos glória.
+          Só vós sois o Deus vivo e verdadeiro,
+          que existis antes de todo o tempo
+          e permaneceis para sempre.
+      - papel: celebrante
+        texto: |
+          Fizestes todas as coisas
+          para cobrir de bênçãos as vossas criaturas
+          e alegrar a muitos
+          com o esplendor da vossa luz.
+      - papel: assembleia
+        texto: "A todos socorrestes com bondade!"
+      - papel: celebrante
+        texto: |
+          E de tal modo, Pai santo,
+          amastes o mundo
+          que enviastes vosso próprio Filho
+          para ser o nosso Salvador.
+      - papel: assembleia
+        texto: "Por amor nos enviastes vosso Filho!"
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Por isso, nós vos pedimos
+          que o Espírito Santo santifique estas oferendas.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebrando agora, ó Pai,
+          a memória da nossa redenção,
+          nós vos oferecemos o Corpo e Sangue de Cristo.
+      - papel: assembleia
+        texto: "Aceitai, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: |
+          Concedei que,
+          participando do mesmo pão e cálice,
+          sejamos reunidos pelo Espírito Santo
+          num só corpo.
+      - papel: assembleia
+        texto: "O Espírito nos una num só corpo!"
+
+  - tipo: doxologia

@@ -1,0 +1,58 @@
+id: oracao_eucaristica_diversas_4
+titulo: "Oração Eucarística para Diversas Circunstâncias IV"
+subtitulo: "Jesus que Passa Fazendo o Bem"
+grupo: diversas
+ordem: 4
+nota: >
+  Convém usar com os formulários de Missa pelos refugiados e exilados,
+  pelos que passam fome, pelos prisioneiros, pelos enfermos e pelos agonizantes.
+
+secoes:
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Pai das misericórdias e Deus fiel,
+          pois nos destes vosso Filho Jesus Cristo
+          como Senhor e Redentor.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: "Enviai o vosso Espírito Santo para santificar estes dons."
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebrando o memorial da Páscoa de Cristo,
+          oferecemos o pão da vida
+          e o cálice da salvação.
+      - papel: assembleia
+        texto: "Aceitai, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: "Conduzi a vossa Igreja à perfeição na fé e no amor."
+      - papel: assembleia
+        texto: "Confirmai na unidade a vossa Igreja!"
+      - papel: celebrante
+        texto: "Abri nossos olhos para perceber as necessidades dos irmãos."
+      - papel: assembleia
+        texto: "Ajudai-nos a criar um mundo novo!"
+
+  - tipo: doxologia

@@ -2,6 +2,15 @@
 layout: default
 ---
 
-<h1><%= data.title %></h1>
+<h1 class="sr-only"><%= data.title %></h1>
 
 <%= yield %>
+
+<script>
+  window.LITURGIA_DATA = <%== (site.data["liturgia_periodo"] || {}).to_json %>;
+  window.ORACOES_DATA  = <%== (site.data.dig("oracoes")&.values&.select { |o| o["grupo"] } || []).to_json %>;
+  window.RITO_DATA     = <%== (site.data.dig("oracoes", "rito-da-comunhao") || {}).to_json %>;
+  window.BENCAOS_DATA  = <%== (site.data.dig("bencaos")&.values
+                               &.select  { |b| b["tipo"] == "bencao_final" }
+                               &.sort_by { |b| b["titulo"] } || []).to_json %>;
+</script>

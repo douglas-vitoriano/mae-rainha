@@ -1,0 +1,279 @@
+.rosario-hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201,151,58,.07) 0%, transparent 70%),
+    linear-gradient(160deg, #0b1530 0%, #0f1b3d 100%);
+  padding: 14rem 1.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.rosario-hero::after {
+  content: '🌹';
+  position: absolute;
+  font-size: 18rem;
+  opacity: .03;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none; user-select: none; line-height: 1;
+}
+.rosario-hero-inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.rosario-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem,5vw,4rem);
+  font-weight: 700; color: white;
+  line-height: 1.15; letter-spacing: -.01em; margin: 0;
+}
+.rosario-titulo em { font-style: italic; color: var(--dourado); }
+.rosario-subtitulo {
+  color: rgba(255,255,255,.5); font-size: 1rem;
+  max-width: 480px; line-height: 1.8; margin: 0; font-style: italic;
+}
+
+.rosario-data-badge {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: rgba(201,151,58,.1);
+  border: 1px solid rgba(201,151,58,.25);
+  border-radius: 50px; padding: .45rem 1.2rem;
+  font-size: .8rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--dourado-claro);
+}
+.rosario-data-badge i { color: var(--dourado); font-size: .72rem; }
+
+.rosario-misterio-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .8rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .4rem 1rem; border-radius: 50px;
+  border: 1px solid transparent; transition: var(--transition);
+}
+.misterio-dourado { background: rgba(201,151,58,.15); border-color: rgba(201,151,58,.3); color: var(--dourado-claro); }
+.misterio-verde   { background: rgba(0,128,0,.15);    border-color: rgba(0,128,0,.3);    color: #80c880; }
+.misterio-vermelho{ background: rgba(180,0,0,.18);    border-color: rgba(180,0,0,.35);   color: #f08080; }
+.misterio-azul    { background: rgba(30,80,180,.18);  border-color: rgba(30,80,180,.35); color: #a0b8f0; }
+
+.rosario-container {
+  max-width: 860px; margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  display: flex; flex-direction: column; gap: 2rem;
+}
+
+.rosario-abertura {
+  background: linear-gradient(135deg, var(--azul-noite), var(--azul-medio));
+  border: 1px solid rgba(201,151,58,.2);
+  border-radius: var(--radius-lg); padding: 2.25rem;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: .75rem;
+}
+.rosario-abertura-icone { font-size: 1.75rem; line-height: 1; }
+.rosario-abertura-texto {
+  font-family: var(--font-display); font-size: 1.1rem; font-style: italic;
+  color: rgba(255,255,255,.82); line-height: 1.85;
+  max-width: 520px; margin: 0; border: none; padding: 0;
+}
+.rosario-abertura-ref {
+  color: var(--dourado); font-size: .78rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; font-style: normal;
+}
+
+.rosario-loading {
+  text-align: center; padding: 3.5rem 1rem;
+  color: var(--texto-medio);
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.rosario-loading .spinner {
+  width: 40px; height: 40px;
+  border: 3px solid rgba(201,151,58,.15);
+  border-top-color: var(--dourado);
+  border-radius: 50%; animation: spin .8s linear infinite;
+}
+
+.rosario-secao { display: flex; flex-direction: column; gap: 1rem; }
+.rosario-secao-header {
+  display: flex; align-items: center; gap: .75rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(201,151,58,.2);
+}
+.rosario-secao-num {
+  width: 36px; height: 36px; min-width: 36px;
+  background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+  color: var(--azul-noite); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; flex-shrink: 0;
+}
+.rosario-secao-titulo {
+  font-family: var(--font-display); font-size: 1.35rem;
+  font-weight: 700; color: var(--texto-escuro); margin: 0;
+}
+
+.rosario-oracao-lista { display: flex; flex-direction: column; gap: .5rem; }
+
+.rosario-oracao-bloco {
+  background: white;
+  border: 1px solid rgba(201,151,58,.12);
+  border-radius: var(--radius-md); overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.rosario-oracao-bloco[open] {
+  border-color: rgba(201,151,58,.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+.rosario-oracao-header {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: .75rem;
+  padding: .9rem 1.25rem; cursor: pointer;
+  list-style: none; user-select: none;
+  transition: background var(--transition);
+}
+.rosario-oracao-header::-webkit-details-marker { display: none; }
+.rosario-oracao-header:hover { background: rgba(201,151,58,.04); }
+.rosario-oracao-titulo {
+  font-size: .88rem; font-weight: 700;
+  color: var(--texto-escuro); display: flex; align-items: center; gap: .5rem;
+}
+.rosario-repeticoes {
+  font-size: .72rem; font-weight: 800;
+  background: rgba(201,151,58,.12);
+  color: var(--dourado); border-radius: 50px;
+  padding: .15rem .5rem; letter-spacing: .04em;
+}
+.rosario-oracao-chevron {
+  color: var(--dourado); font-size: .65rem; flex-shrink: 0;
+  transition: transform .2s ease;
+}
+.rosario-oracao-bloco[open] .rosario-oracao-chevron { transform: rotate(180deg); }
+.rosario-oracao-body {
+  padding: .75rem 1.25rem 1.25rem;
+  border-top: 1px solid rgba(201,151,58,.1);
+  background: rgba(201,151,58,.02);
+}
+.rosario-oracao-texto {
+  font-family: var(--font-display); font-size: .97rem;
+  color: var(--texto-medio); line-height: 2; margin: 0;
+}
+
+.rosario-contador {
+  font-size: .75rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(201,151,58,.6);
+  display: flex; align-items: center; gap: .4rem;
+  padding: .3rem .5rem; margin: .25rem 0;
+}
+.rosario-contador-inline {
+  font-size: .68rem; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(201,151,58,.7);
+  background: rgba(201,151,58,.08);
+  border-radius: 50px; padding: .2rem .55rem;
+  flex-shrink: 0;
+}
+
+.rosario-misterios-lista {
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+.rosario-misterio {
+  display: flex; gap: 1rem; align-items: flex-start;
+}
+.rosario-misterio-num-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  flex-shrink: 0; padding-top: .2rem;
+}
+.rosario-misterio-num {
+  width: 38px; height: 38px;
+  background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+  color: var(--azul-noite); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .78rem; font-weight: 900; flex-shrink: 0;
+}
+.rosario-misterio-linha {
+  width: 2px; flex: 1; min-height: 1rem;
+  background: linear-gradient(180deg, rgba(201,151,58,.3), transparent);
+  margin-top: .4rem;
+}
+.rosario-misterio-corpo {
+  flex: 1; display: flex; flex-direction: column; gap: .5rem;
+  min-width: 0;
+}
+
+.rosario-detalhe {
+  background: white;
+  border: 1px solid rgba(201,151,58,.15);
+  border-radius: var(--radius-md); overflow: hidden;
+}
+.rosario-detalhe[open] { border-color: rgba(201,151,58,.3); }
+.rosario-detalhe-header {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: .75rem;
+  padding: .85rem 1.1rem; cursor: pointer;
+  list-style: none; user-select: none;
+  transition: background var(--transition);
+}
+.rosario-detalhe-header::-webkit-details-marker { display: none; }
+.rosario-detalhe-header:hover { background: rgba(201,151,58,.04); }
+.rosario-detalhe-titulo {
+  font-size: .93rem; font-weight: 700; color: var(--texto-escuro);
+}
+.rosario-detalhe-chevron {
+  color: var(--dourado); font-size: .65rem; flex-shrink: 0;
+  transition: transform .2s ease;
+}
+.rosario-detalhe[open] .rosario-detalhe-chevron { transform: rotate(180deg); }
+.rosario-detalhe-body {
+  padding: .75rem 1.1rem 1rem;
+  border-top: 1px solid rgba(201,151,58,.1);
+  background: rgba(201,151,58,.02);
+}
+.rosario-meditacao {
+  font-family: var(--font-display); font-size: .93rem;
+  font-style: italic; color: var(--texto-medio);
+  line-height: 1.85; margin: 0;
+}
+
+.rosario-misterio-oracoes {
+  display: flex; flex-wrap: wrap;
+  align-items: center; gap: .4rem;
+  padding: .4rem .1rem;
+}
+.rosario-miniatura {
+  background: rgba(201,151,58,.05);
+  border: 1px solid rgba(201,151,58,.15);
+  border-radius: 50px; overflow: visible;
+  transition: border-color var(--transition);
+}
+.rosario-miniatura[open] {
+  border-radius: var(--radius-md);
+  border-color: rgba(201,151,58,.3);
+  background: white;
+}
+.rosario-miniatura-header {
+  display: flex; align-items: center; gap: .4rem;
+  padding: .3rem .85rem; cursor: pointer;
+  list-style: none; user-select: none;
+  font-size: .72rem; font-weight: 700;
+  color: var(--dourado); white-space: nowrap;
+  transition: background var(--transition);
+}
+.rosario-miniatura-header::-webkit-details-marker { display: none; }
+.rosario-miniatura-header i {
+  font-size: .55rem; transition: transform .2s ease;
+}
+.rosario-miniatura[open] .rosario-miniatura-header i { transform: rotate(180deg); }
+.rosario-miniatura-body {
+  padding: .75rem 1rem 1rem;
+  border-top: 1px solid rgba(201,151,58,.1);
+}
+
+@media (max-width: 1023px) {
+  .rosario-hero { padding: 8rem 1rem 3rem; }
+}
+@media (max-width: 768px) {
+  .rosario-container { padding: 2rem 1rem 4rem; gap: 1.5rem; }
+  .rosario-misterio  { gap: .75rem; }
+  .rosario-misterio-num { width: 32px; height: 32px; font-size: .72rem; }
+  .rosario-detalhe-titulo { font-size: .85rem; }
+  .rosario-miniatura-header { font-size: .68rem; }
+}

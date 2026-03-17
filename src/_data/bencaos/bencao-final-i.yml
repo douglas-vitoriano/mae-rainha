@@ -1,0 +1,18 @@
+titulo: "Bênção Final I"
+subtitulo: "Forma Simples"
+tempo_liturgico: "Tempo Comum"
+tipo: bencao_final
+
+partes:
+  - papel: celebrante
+    texto: "O Senhor esteja convosco!"
+  - papel: assembleia
+    texto: "Ele está no meio de nós!"
+  - papel: celebrante
+    texto: "Abençoe-vos Deus todo-poderoso, Pai e Filho ✠ e Espírito Santo."
+  - papel: assembleia
+    texto: "Amém!"
+  - papel: celebrante
+    texto: "Ide em paz e que o Senhor vos acompanhe."
+  - papel: assembleia
+    texto: "Graças a Deus."

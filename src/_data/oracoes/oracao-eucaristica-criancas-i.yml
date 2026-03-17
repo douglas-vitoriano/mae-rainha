@@ -1,0 +1,113 @@
+id: oracao_eucaristica_criancas_1
+titulo: "Oração Eucarística para Missas com Crianças I"
+grupo: criancas
+ordem: 1
+nota: >
+  Restrito às Missas que se celebram só com crianças (que ainda não entraram
+  na adolescência) ou àquelas nas quais a maior parte dos participantes é criança.
+  O prefácio desta Oração Eucarística não pode ser substituído.
+
+secoes:
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Senhor, Pai de bondade,
+          nos reunistes diante de vós
+          para vos celebrar e proclamar vossos louvores
+          com o coração em festa.
+      - papel: celebrante
+        texto: |
+          Nós vos louvamos
+          por todas as coisas bonitas
+          que existem no mundo
+          e pela alegria que dais a todos nós.
+      - papel: assembleia
+        texto: "Glória a vós, Senhor, que tanto nos amais!"
+      - papel: celebrante
+        texto: |
+          Nós vos louvamos pela luz do dia
+          e por vossa Palavra que nos ilumina.
+          Nós vos louvamos também pela terra,
+          pelas pessoas que nela habitam
+          e pela vida que de vós recebemos.
+      - papel: assembleia
+        texto: "Glória a vós, Senhor, que tanto nos amais!"
+      - papel: celebrante
+        texto: |
+          Sim, ó Pai, sois muito bom:
+          vós nos amais e fazeis por nós coisas maravilhosas,
+          sempre pensais em todas as pessoas
+          e nunca desistis de estar perto delas.
+          Enviastes vosso Filho querido para nos salvar.
+          Ele curou os doentes, perdoou os pecadores,
+          mostrou a todos o vosso amor,
+          acolheu e abençoou as crianças.
+      - papel: assembleia
+        texto: "Glória a vós, Senhor, que tanto nos amais!"
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Pai santo,
+          para vos agradecer,
+          trouxemos este pão e este vinho.
+          Pela ação do Espírito Santo fazei que eles se tornem
+          o Corpo ✠ e o Sangue de Jesus Cristo,
+          vosso Filho muito amado.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    introducao: |
+      Jesus, na noite antes de sua morte na cruz,
+      tomou o pão em suas mãos,
+      deu graças,
+      partiu o pão
+      e o deu a seus amigos, dizendo:
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    introducao: |
+      Do mesmo modo,
+      tomou o cálice com vinho
+      e disse:
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Nesta Eucaristia,
+          nós fazemos com amor o que Jesus mandou
+          e vos oferecemos o Pão da vida
+          e o Cálice da salvação.
+      - papel: assembleia
+        texto: "Com Jesus, recebei a nossa vida!"
+      - papel: celebrante
+        texto: |
+          Enviai sobre nós o Espírito Santo
+          para que, alimentando-nos com o Corpo e Sangue de Cristo,
+          sejamos um só coração e uma só alma.
+      - papel: assembleia
+        texto: "Fazei de nós um só corpo e um só espírito!"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos do Papa N.,
+          do nosso Bispo N.,
+          dos nossos pais, irmãos, amigos
+          e dos que morreram na vossa paz.
+
+  - tipo: doxologia

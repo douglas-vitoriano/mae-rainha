@@ -1,0 +1,79 @@
+id: oracao_eucaristica_criancas_3
+titulo: "Oração Eucarística para Missas com Crianças III"
+grupo: criancas
+ordem: 3
+nota: >
+  Restrito às Missas que se celebram só com crianças
+  ou nas quais a maioria dos participantes é criança.
+
+secoes:
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Deus, nosso Pai,
+          nós vos agradecemos, porque nos criastes
+          para vivermos para vós,
+          amando-nos como irmãos.
+      - papel: celebrante
+        texto: |
+          Chamastes-nos à vida
+          e quereis que sejamos felizes para sempre.
+          Jesus é o primeiro que ressuscitastes dentre os mortos
+          e nele prometestes vida sem fim.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Mandai vosso Espírito Santo
+          para santificar estes dons do pão e do vinho.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    introducao: |
+      Na noite antes de morrer por nós,
+      Jesus tomou o pão,
+      deu graças,
+      partiu-o e disse:
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    introducao: "Depois tomou o cálice e disse:"
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebramos agora
+          a memória da morte e ressurreição de Cristo
+          e vos oferecemos este sacrifício de salvação.
+      - papel: assembleia
+        texto: "Com Jesus, recebei a nossa vida!"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos do nosso Papa N.,
+          do nosso Bispo N.,
+          e de toda a Igreja.
+      - papel: assembleia
+        texto: "Fazei de nós um só corpo e um só espírito!"
+      - papel: celebrante
+        texto: |
+          Concedei que um dia
+          estejamos junto de vós no céu
+          com Maria e todos os Santos.
+
+  - tipo: doxologia

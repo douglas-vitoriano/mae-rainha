@@ -1,0 +1,96 @@
+id: oracao_eucaristica_criancas_2
+titulo: "Oração Eucarística para Missas com Crianças II"
+grupo: criancas
+ordem: 2
+nota: >
+  Restrito às Missas que se celebram só com crianças (que ainda não entraram
+  na adolescência) ou àquelas nas quais a maior parte dos participantes é criança.
+  O prefácio desta Oração Eucarística não pode ser substituído.
+
+secoes:
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Ó Pai querido, que tanto nos amais,
+          como é grande a nossa alegria
+          em vos agradecer
+          e com Jesus, na vossa Igreja,
+          cantar vosso louvor.
+      - papel: celebrante
+        texto: |
+          Vós nos amastes tanto
+          que criastes para nós
+          este mundo imenso e maravilhoso.
+          Vós nos amais tanto
+          que nos dais vosso Filho Jesus
+          para nos guiar até vós.
+          Vós nos amais tanto
+          que nos reunis em vosso Filho Jesus
+          e, pelo Espírito Santo,
+          nos tornais filhos e filhas da mesma família.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Ó Deus, nosso Pai,
+          enviai vosso Espírito Santo
+          para que estes dons do pão e do vinho
+          se tornem o Corpo ✠ e o Sangue
+          de nosso Senhor Jesus Cristo.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    introducao: |
+      Jesus, na noite antes de sua morte na cruz,
+      tomou o pão em suas mãos,
+      deu graças e partiu o pão,
+      dando-o aos seus amigos, dizendo:
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    introducao: |
+      Do mesmo modo,
+      tomou o cálice com vinho e disse:
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Por isso, Pai querido,
+          celebramos a memória
+          da morte e ressurreição de Jesus.
+          Nós vos oferecemos
+          este sacrifício de reconciliação e paz.
+      - papel: assembleia
+        texto: "Com Jesus, recebei a nossa vida!"
+      - papel: celebrante
+        texto: |
+          Dai o Espírito do vosso amor
+          aos que participam desta Ceia,
+          para que permaneçam unidos na vossa Igreja,
+          com o Papa N., o nosso Bispo N.,
+          e todos os que servem o vosso povo.
+      - papel: assembleia
+        texto: "Fazei de nós um só corpo e um só espírito!"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos também
+          dos nossos pais, parentes e amigos,
+          e daqueles que partiram desta vida.
+
+  - tipo: doxologia

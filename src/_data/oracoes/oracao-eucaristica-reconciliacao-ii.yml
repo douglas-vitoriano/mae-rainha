@@ -1,0 +1,60 @@
+id: oracao_eucaristica_reconciliacao_2
+titulo: "Oração Eucarística sobre a Reconciliação II"
+grupo: reconciliacao
+ordem: 2
+
+secoes:
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Na verdade, é digno e justo
+          dar-vos graças e cantar vossos louvores,
+          Deus Pai todo-poderoso,
+          por tudo que realizais no mundo
+          por Cristo, nosso Senhor.
+
+  - tipo: epiclese
+    partes:
+      - papel: celebrante
+        texto: |
+          Santificai estas oferendas
+          pela efusão do vosso Espírito,
+          para que se tornem
+          o Corpo e ✠ o Sangue de Cristo.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Celebrando a memória
+          da morte e ressurreição de Cristo,
+          nós vos oferecemos
+          o sacrifício da reconciliação.
+      - papel: assembleia
+        texto: "Aceitai, ó Senhor, a nossa oferta!"
+      - papel: celebrante
+        texto: |
+          Concedei que a vossa Igreja
+          seja sinal de unidade
+          e instrumento da vossa paz.
+      - papel: assembleia
+        texto: "Lembrai-vos, ó Pai, da vossa Igreja!"
+
+  - tipo: doxologia

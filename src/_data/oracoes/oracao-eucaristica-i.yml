@@ -1,0 +1,125 @@
+grupo: ordinario
+ordem: 1
+titulo: "Oração Eucarística I"
+nota: >
+  A mais antiga das orações eucarísticas do Rito Romano,
+  também chamada Cânon Romano.
+
+secoes:
+  - tipo: dialogo
+
+  - tipo: prefacio
+    partes:
+      - papel: celebrante
+        texto: |
+          Pai de misericórdia,
+          a quem sobem nossos louvores,
+          suplicantes, vos rogamos e pedimos
+          por Jesus Cristo, vosso Filho e Senhor nosso,
+          que aceiteis e abençoeis ✠ estes dons,
+          estas oferendas,
+          este sacrifício puro e santo,
+          que oferecemos,
+          antes de tudo, pela vossa Igreja santa e católica:
+          concedei-lhe paz e proteção,
+          unindo-a num só corpo
+          e governando-a por toda a terra,
+          em comunhão com vosso servo o Papa N.,
+          o nosso Bispo N.,
+          e todos os que guardam a fé católica
+          que receberam dos Apóstolos.
+      - papel: assembleia
+        texto: "Abençoai nossa oferenda, ó Senhor!"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos, ó Pai,
+          dos vossos filhos e filhas N. N.
+          e de todos os que circundam este altar,
+          dos quais conheceis a fé
+          e a dedicação ao vosso serviço.
+      - papel: celebrante
+        texto: |
+          Por eles nós vos oferecemos
+          e também eles vos oferecem
+          este sacrifício de louvor
+          por si e por todos os seus,
+          e elevam a vós as suas preces,
+          Deus eterno, vivo e verdadeiro,
+          para alcançar o perdão de suas faltas,
+          a segurança em suas vidas
+          e a salvação que esperam.
+      - papel: assembleia
+        texto: "Lembrai-vos, ó Pai, dos vossos filhos!"
+      - papel: rubrica
+        texto: "Na Missa com Batismo"
+      - papel: celebrante
+        texto: |
+          Lembrai-vos, ó Pai,
+          dos vossos filhos e filhas N. N.
+          que conduziram os vossos eleitos
+          à santa graça do Batismo.
+      - papel: rubrica
+        texto: "Em comunhão com toda a Igreja"
+      - papel: celebrante
+        texto: |
+          Celebramos em primeiro lugar
+          a memória da Mãe de nosso Deus e Senhor Jesus Cristo,
+          a gloriosa sempre Virgem Maria,
+          e a de seu esposo São José,
+          e também a dos Santos Apóstolos e Mártires.
+      - papel: assembleia
+        texto: "Em comunhão com vossos Santos vos louvamos!"
+      - papel: celebrante
+        texto: |
+          Aceitai, ó Pai, com bondade,
+          a oblação dos vossos servos
+          e de toda a vossa família;
+          dai-nos sempre a vossa paz,
+          livrai-nos da condenação eterna
+          e acolhei-nos entre os vossos eleitos.
+      - papel: assembleia
+        texto: "Enviai o vosso Espírito Santo!"
+
+  - tipo: consagracao_pao
+    introducao: |
+      Na véspera de sua paixão,
+      ele tomou o pão em suas santas e veneráveis mãos,
+      elevou os olhos ao céu,
+      a vós, ó Pai todo-poderoso,
+      pronunciou a bênção de ação de graças,
+      partiu o pão e o deu a seus discípulos, dizendo:
+    texto: |
+      TOMAI, TODOS, E COMEI:
+      ISTO É O MEU CORPO,
+      QUE SERÁ ENTREGUE POR VÓS.
+
+  - tipo: consagracao_calice
+    introducao: |
+      Do mesmo modo, no fim da ceia,
+      ele tomou este precioso cálice
+      em suas santas e veneráveis mãos,
+      pronunciou novamente a bênção de ação de graças
+      e o deu a seus discípulos, dizendo:
+    texto: |
+      TOMAI, TODOS, E BEBEI:
+      ESTE É O CÁLICE DO MEU SANGUE,
+      O SANGUE DA NOVA E ETERNA ALIANÇA,
+      QUE SERÁ DERRAMADO POR VÓS E POR TODOS
+      PARA REMISSÃO DOS PECADOS.
+      FAZEI ISTO EM MEMÓRIA DE MIM.
+
+  - tipo: aclamacao_memorial
+
+  - tipo: pos_consagracao
+    partes:
+      - papel: celebrante
+        texto: |
+          Por Cristo, com Cristo e em Cristo,
+          a vós, Deus Pai todo-poderoso,
+          na unidade do Espírito Santo,
+          toda honra e toda glória,
+          por todos os séculos dos séculos.
+      - papel: assembleia
+        texto: "Amém."
+
+  - tipo: doxologia
