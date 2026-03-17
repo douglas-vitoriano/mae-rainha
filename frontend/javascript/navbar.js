@@ -1,7 +1,6 @@
 export function initNavbar() {
   const navbar = document.querySelector('.navbar-principal')
 
-  // ── Altura dinâmica da navbar → CSS variable ──
   function atualizarAlturaNavbar() {
     if (!navbar) return
     document.documentElement.style.setProperty(
@@ -11,6 +10,12 @@ export function initNavbar() {
   }
 
   atualizarAlturaNavbar()
+
+  requestAnimationFrame(() => {
+    atualizarAlturaNavbar()
+    setTimeout(atualizarAlturaNavbar, 300)
+  })
+
   window.addEventListener('resize', atualizarAlturaNavbar, { passive: true })
 
   // ── Burger ──
@@ -27,14 +32,12 @@ export function initNavbar() {
       )
       if (target) target.classList.toggle('is-active')
 
-      // Recalcula após animação do menu mobile
       setTimeout(atualizarAlturaNavbar, 50)
     })
   })
 
   if (!navbar) return
 
-  // ── Hide/show no scroll ──
   let lastY   = window.scrollY
   let ticking = false
 
@@ -67,7 +70,6 @@ export function initNavbar() {
     }
   }, { passive: true })
 
-  // ── Active link por seção ──
   const sections = document.querySelectorAll('section[id]')
   const navLinks = document.querySelectorAll('.navbar-item[href^="#"]')
 

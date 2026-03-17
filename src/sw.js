@@ -1,37 +1,38 @@
-/* =====================================================
-   sw.js — Service Worker PWA
-   Grupo de Oração Mãe Rainha
-   
-   Estratégias:
-     - Shell (HTML/CSS/JS): Network-first → Cache → Offline
-     - Assets estáticos:    Cache-first → Network
-     - API liturgia:        Network-first → {} vazio (fallback JS trata)
-     - Fontes/CDN:          Cache-first (stale-while-revalidate)
-   ===================================================== */
-
-const APP_VERSION    = 'v2'
+const APP_VERSION    = 'v3'
 const CACHE_SHELL    = `mae-rainha-shell-${APP_VERSION}`
 const CACHE_STATIC   = `mae-rainha-static-${APP_VERSION}`
 const CACHE_FONTS    = `mae-rainha-fonts-${APP_VERSION}`
 const ALL_CACHES     = [CACHE_SHELL, CACHE_STATIC, CACHE_FONTS]
 
-// Recursos críticos pré-cacheados no install
 const PRE_CACHE = [
   '/',
+  '/index.html',
   '/liturgia',
+  '/liturgia/',
+  '/rosario',
+  '/rosario/',
   '/offline.html',
   '/404.html',
   '/manifest.json',
   '/images/logotipo.png',
+  '/images/sagradafamilia.png',
   '/images/icons/icon-192.png',
   '/images/icons/icon-512.png',
 ]
 
-// ── Install: pré-cacheia o shell da aplicação ──────────────────────────
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_SHELL)
-      .then(cache => cache.addAll(PRE_CACHE))
+      .then(cache => {
+
+        return Promise.allSettled(
+          PRE_CACHE.map(url =>
+            cache.add(url).catch(err =>
+              console.warn('[SW] Não foi possível pré-cachear:', url, err)
+            )
+          )
+        )
+      })
       .then(() => {
         console.log('[SW] Shell cacheado com sucesso')
         return self.skipWaiting()
@@ -40,7 +41,6 @@ self.addEventListener('install', event => {
   )
 })
 
-// ── Activate: limpa caches antigos e assume controle ──────────────────
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
@@ -56,32 +56,25 @@ self.addEventListener('activate', event => {
   )
 })
 
-// ── Fetch: roteamento por tipo de recurso ─────────────────────────────
 self.addEventListener('fetch', event => {
   const { request } = event
   const url = new URL(request.url)
 
-  // Ignora métodos não-GET
   if (request.method !== 'GET') return
 
-  // Ignora extensões do browser e requests de devtools
   if (url.protocol === 'chrome-extension:') return
 
-  // ── API Liturgia: Network-first, sem cache (dados mudam todo dia) ──
   if (url.hostname.includes('liturgia.up.railway.app')) {
     event.respondWith(networkOnlyWithFallback(request))
     return
   }
 
-  // ── Cross-origin desconhecido: não intercepta ──
   if (url.origin !== self.location.origin) {
-    // Exceto fontes do Google: Cache-first
     if (url.hostname.includes('fonts.googleapis.com') ||
         url.hostname.includes('fonts.gstatic.com')) {
       event.respondWith(cacheFirstWithNetwork(request, CACHE_FONTS))
       return
     }
-    // CDN conhecidos (Bulma, Font Awesome): Cache-first
     if (url.hostname.includes('cdn.jsdelivr.net') ||
         url.hostname.includes('cdnjs.cloudflare.com')) {
       event.respondWith(cacheFirstWithNetwork(request, CACHE_STATIC))
@@ -90,13 +83,11 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  // ── Assets buildados pelo esbuild: Cache-first ──
   if (url.pathname.startsWith('/_bridgetown/static/')) {
     event.respondWith(cacheFirstWithNetwork(request, CACHE_STATIC))
     return
   }
 
-  // ── Imagens e fontes locais: Cache-first ──
   if (
     url.pathname.startsWith('/images/') ||
     url.pathname.match(/\.(png|jpg|jpeg|gif|webp|avif|svg|ico)$/) ||
@@ -106,19 +97,14 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  // ── manifest.json e sw.js: Network-first (precisam estar atualizados) ──
   if (url.pathname === '/manifest.json' || url.pathname === '/sw.js') {
     event.respondWith(networkFirstWithCache(request, CACHE_SHELL))
     return
   }
 
-  // ── Páginas HTML: Network-first → Cache → Offline ──
   event.respondWith(networkFirstWithOfflineFallback(request))
 })
 
-// ── Estratégias ───────────────────────────────────────────────────────
-
-/** Network-only com fallback JSON vazio (API) */
 async function networkOnlyWithFallback(request) {
   try {
     return await fetch(request)
@@ -130,7 +116,6 @@ async function networkOnlyWithFallback(request) {
   }
 }
 
-/** Cache-first → Network → salva no cache */
 async function cacheFirstWithNetwork(request, cacheName) {
   const cached = await caches.match(request)
   if (cached) return cached
@@ -147,7 +132,6 @@ async function cacheFirstWithNetwork(request, cacheName) {
   }
 }
 
-/** Network-first → Cache */
 async function networkFirstWithCache(request, cacheName) {
   try {
     const response = await fetch(request)
@@ -162,7 +146,6 @@ async function networkFirstWithCache(request, cacheName) {
   }
 }
 
-/** Network-first → Cache → /offline.html (para páginas HTML) */
 async function networkFirstWithOfflineFallback(request) {
   try {
     const response = await fetch(request)
@@ -172,19 +155,40 @@ async function networkFirstWithOfflineFallback(request) {
     }
     return response
   } catch {
-    const cached = await caches.match(request)
+    let cached = await caches.match(request)
     if (cached) return cached
 
-    // Se for navegação, retorna página offline
+    const url = new URL(request.url)
+    const pathname = url.pathname
+
+    const variantes = new Set()
+    variantes.add(pathname)
+
+    if (pathname.endsWith('/')) {
+      variantes.add(pathname.slice(0, -1))
+      variantes.add(pathname + 'index.html')
+    } else {
+      variantes.add(pathname + '/')
+      variantes.add(pathname + '/index.html')
+      variantes.add(pathname + '.html') 
+    }
+
+    for (const alt of variantes) {
+      if (alt === pathname) continue
+      cached = await caches.match(new Request(url.origin + alt))
+      if (cached) return cached
+    }
+
+    // 3. Se for navegação de página, retorna tela offline
     if (request.mode === 'navigate') {
-      return caches.match('/offline.html')
+      const offlinePage = await caches.match('/offline.html')
+      if (offlinePage) return offlinePage
     }
 
     return new Response('Offline', { status: 503 })
   }
 }
 
-// ── Mensagens do cliente ──────────────────────────────────────────────
 self.addEventListener('message', event => {
   if (event.data?.type === 'SKIP_WAITING') {
     self.skipWaiting()

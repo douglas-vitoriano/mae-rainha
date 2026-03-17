@@ -267,58 +267,65 @@ function renderLiturgia(root, data) {
     { id:'pan-bencao', icon:'✠',   label:'Bênçãos Finais'   },
   ]
 
-  // A primeira aba ativa é sempre a primeira das leituras (ou a primeira da missa se não houver leituras)
-  const todasAbas   = [...abasLeitura, ...abasMissa]
-  const primeiraId  = todasAbas[0]?.id || 'pan-oe'
+  // FIX 2: a primeira aba ativa é sempre a primeira das LEITURAS.
+  // Os painéis da missa nunca devem ser ativados por padrão —
+  // eles ficam ocultos (display:none via .liturgia-panel sem .ativo)
+  // até o usuário clicar nas tabs da missa no rodapé.
+  const primeiraLeituraId = abasLeitura[0]?.id || null
+  const primeiraMissaId   = null  // nenhuma tab da missa ativa por padrão
 
-  const buildTabs = (abas) => abas.map(a => `
-    <button class="liturgia-tab${a.id === primeiraId ? ' ativo' : ''}"
+  // buildTabs aceita um activeId explícito para cada grupo
+  const buildTabs = (abas, activeId) => abas.map(a => `
+    <button class="liturgia-tab${a.id === activeId ? ' ativo' : ''}"
       data-panel="${a.id}" role="tab"
-      aria-selected="${a.id === primeiraId}"
+      aria-selected="${String(a.id === activeId)}"
       aria-controls="${a.id}">
       <span aria-hidden="true">${a.icon}</span> ${a.label}
     </button>`).join('')
 
   root.innerHTML = `
 
-    <!-- ── Abas de leituras ── -->
+    <!-- ── Abas de leituras (topo) ── -->
     <div class="liturgia-tabs" role="tablist" aria-label="Leituras do dia">
-      ${buildTabs(abasLeitura)}
+      ${buildTabs(abasLeitura, primeiraLeituraId)}
     </div>
 
     <!-- ── Painéis de leituras ── -->
     <div id="pan-leituras"
-      class="liturgia-panel${primeiraId==='pan-leituras'?' ativo':''}"
+      class="liturgia-panel${primeiraLeituraId === 'pan-leituras' ? ' ativo' : ''}"
       role="tabpanel">
       ${(leituras.primeiraLeitura||[]).map(l => blocoLeitura('📖 Primeira Leitura', l)).join('')}
       ${(leituras.segundaLeitura||[]).map(l  => blocoLeitura('📖 Segunda Leitura', l)).join('')}
       ${(leituras.extras||[]).filter(l=>l.tipo).map(l => blocoLeitura(`📖 ${l.tipo}`, l)).join('')}
     </div>
 
-    ${salmo.length ? `<div id="pan-salmo" class="liturgia-panel" role="tabpanel">
+    ${salmo.length ? `<div id="pan-salmo"
+      class="liturgia-panel${primeiraLeituraId === 'pan-salmo' ? ' ativo' : ''}"
+      role="tabpanel">
       ${salmo.map(s => blocoSalmo(s)).join('')}
     </div>` : ''}
 
-    ${ev.length ? `<div id="pan-evangelho" class="liturgia-panel" role="tabpanel">
+    ${ev.length ? `<div id="pan-evangelho"
+      class="liturgia-panel${primeiraLeituraId === 'pan-evangelho' ? ' ativo' : ''}"
+      role="tabpanel">
       ${ev.map(e => blocoLeitura('✝️ Evangelho', e)).join('')}
     </div>` : ''}
 
-    ${oracoes.coleta ? `<div id="pan-oracoes" class="liturgia-panel" role="tabpanel">
+    ${oracoes.coleta ? `<div id="pan-oracoes"
+      class="liturgia-panel${primeiraLeituraId === 'pan-oracoes' ? ' ativo' : ''}"
+      role="tabpanel">
       ${blocoOracao('Coleta', oracoes.coleta)}
       ${oracoes.oferendas ? blocoOracao('Oração sobre as Oferendas', oracoes.oferendas) : ''}
       ${oracoes.comunhao  ? blocoOracao('Oração após a Comunhão', oracoes.comunhao) : ''}
       ${extrasO.map(o => blocoOracao(o.titulo||'Oração extra', o.texto)).join('')}
     </div>` : ''}
 
-    ${(antifonas.entrada||antifonas.comunhao) ? `<div id="pan-antifonas" class="liturgia-panel" role="tabpanel">
+    ${(antifonas.entrada||antifonas.comunhao) ? `<div id="pan-antifonas"
+      class="liturgia-panel${primeiraLeituraId === 'pan-antifonas' ? ' ativo' : ''}"
+      role="tabpanel">
       ${antifonas.entrada  ? blocoOracao('Antífona de Entrada', antifonas.entrada)  : ''}
       ${antifonas.comunhao ? blocoOracao('Antífona da Comunhão', antifonas.comunhao) : ''}
     </div>` : ''}
-
-    <!-- ── Painéis da missa (ficam ocultos até serem ativados) ── -->
-    ${renderPanelOracoesEucaristicas()}
-    ${renderPanelRito()}
-    ${renderPanelBencaos()}
 
     <!-- ── Divisor ── -->
     <div class="liturgia-missa-divisor" aria-hidden="true">
@@ -327,8 +334,13 @@ function renderLiturgia(root, data) {
 
     <!-- ── Abas da missa (final da página) ── -->
     <div class="liturgia-tabs liturgia-tabs-missa" role="tablist" aria-label="Orações da Missa">
-      ${buildTabs(abasMissa)}
+      ${buildTabs(abasMissa, primeiraMissaId)}
     </div>
+
+    <!-- ── Painéis da missa (ficam ocultos até serem ativados pelas tabs acima) ── -->
+    ${renderPanelOracoesEucaristicas()}
+    ${renderPanelRito()}
+    ${renderPanelBencaos()}
   `
 
   initTabs(root)
