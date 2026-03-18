@@ -1,0 +1,203 @@
+/* =====================================================
+   _instalar.css — Página de instalação do PWA
+   ===================================================== */
+
+.instalar-hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201,151,58,.07) 0%, transparent 70%),
+    linear-gradient(160deg, #0b1530 0%, #0f1b3d 100%);
+  padding-top: calc(var(--navbar-height, 12rem) + 4rem);
+  padding-bottom: 4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.instalar-hero::after {
+  content: '✦';
+  position: absolute;
+  font-size: 20rem;
+  color: rgba(201,151,58,.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.instalar-hero-inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.instalar-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700; color: white;
+  line-height: 1.15; letter-spacing: -.01em; margin: 0;
+}
+.instalar-titulo em { font-style: italic; color: var(--dourado); }
+.instalar-subtitulo {
+  color: rgba(255,255,255,.55); font-size: 1rem;
+  max-width: 480px; line-height: 1.8; margin: 0;
+}
+
+.instalar-container {
+  max-width: 860px; margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  display: flex; flex-direction: column; gap: 2rem;
+}
+
+.instalar-card {
+  background: white;
+  border: 1px solid rgba(201,151,58,.15);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  transition: var(--transition);
+}
+.instalar-card:hover {
+  border-color: rgba(201,151,58,.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,.07);
+  transform: translateY(-1px);
+}
+
+.instalar-plataforma {
+  display: none;
+}
+.instalar-plataforma.visivel {
+  display: block;
+}
+.instalar-ja-instalado {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+.instalar-ja-instalado.visivel {
+  display: block;
+}
+.instalar-ja-instalado-icone { font-size: 2.5rem; }
+.instalar-ja-instalado-titulo {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--texto-escuro); margin: .5rem 0 .25rem;
+}
+.instalar-ja-instalado-desc {
+  color: var(--texto-medio); font-size: .9rem;
+}
+
+.instalar-steps {
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.instalar-step {
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.instalar-step-num {
+  width: 36px; height: 36px; min-width: 36px;
+  background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+  color: var(--azul-noite); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; font-weight: 900; flex-shrink: 0; margin-top: .1rem;
+}
+.instalar-step-texto {
+  font-size: .95rem; color: var(--texto-medio); line-height: 1.6;
+}
+.instalar-step-texto strong { color: var(--texto-escuro); }
+
+#btn-instalar-android {
+  display: none;
+  width: 100%;
+  margin-top: 1.75rem;
+  padding: .9rem 1.5rem;
+  background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+  color: var(--azul-noite);
+  border: none; border-radius: 50px;
+  font-family: var(--font-body); font-size: 1rem; font-weight: 800;
+  cursor: pointer; letter-spacing: .04em;
+  box-shadow: 0 4px 24px rgba(201,151,58,.35);
+  transition: var(--transition);
+}
+#btn-instalar-android:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,151,58,.5); }
+#btn-instalar-android:active { transform: translateY(0); }
+#btn-instalar-android.visivel { display: block; }
+
+.instalar-qr-section {
+  display: none;
+  flex-direction: column; align-items: center; gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--azul-noite), var(--azul-medio));
+  border: 1px solid rgba(201,151,58,.2);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.instalar-qr-section.visivel {
+  display: flex;
+}
+.instalar-qr-titulo {
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 700; color: white; margin: 0;
+}
+.instalar-qr-subtitulo {
+  color: rgba(255,255,255,.5); font-size: .88rem; margin: 0;
+}
+.instalar-qr-wrap {
+  background: white; padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 0 0 1px rgba(201,151,58,.2), 0 8px 32px rgba(0,0,0,.4);
+  line-height: 0;
+}
+.instalar-qr-wrap canvas,
+.instalar-qr-wrap img { display: block; border-radius: 4px; }
+.instalar-qr-url {
+  font-size: .78rem; color: rgba(201,151,58,.6); letter-spacing: .04em;
+}
+
+.instalar-recursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.instalar-recurso {
+  background: white;
+  border: 1px solid rgba(201,151,58,.12);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.25rem;
+  display: flex; align-items: flex-start; gap: .85rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.instalar-recurso:hover {
+  border-color: rgba(201,151,58,.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+.instalar-recurso-icone {
+  font-size: 1.6rem; flex-shrink: 0; line-height: 1;
+}
+.instalar-recurso-info { flex: 1; }
+.instalar-recurso-titulo {
+  font-size: .9rem; font-weight: 700;
+  color: var(--texto-escuro); margin-bottom: .2rem;
+}
+.instalar-recurso-desc {
+  font-size: .8rem; color: var(--texto-medio); line-height: 1.5;
+}
+
+.instalar-secao-label {
+  font-size: .68rem; font-weight: 800;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--dourado); margin-bottom: .75rem;
+  display: flex; align-items: center; gap: .55rem;
+}
+.instalar-secao-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, rgba(201,151,58,.3), transparent);
+}
+
+@media (max-width: 1023px) {
+  .instalar-hero {
+    padding-top: calc(var(--navbar-height, 8rem) + 2.5rem);
+  }
+}
+@media (max-width: 768px) {
+  .instalar-container { padding: 2rem 1rem 4rem; }
+  .instalar-card { padding: 1.5rem 1.25rem; }
+}

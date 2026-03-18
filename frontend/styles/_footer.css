@@ -61,6 +61,51 @@ a.footer-link:hover {
   color: var(--dourado-claro);
 }
 
+/* ── Botão PWA no footer ── */
+.footer-pwa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0.45rem 1rem;
+  background: rgba(201, 151, 58, 0.1);
+  border: 1px solid rgba(201, 151, 58, 0.3);
+  border-radius: 50px;
+  color: var(--dourado-claro);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.footer-pwa-btn:hover {
+  background: rgba(201, 151, 58, 0.2);
+  border-color: rgba(201, 151, 58, 0.55);
+  color: var(--dourado-claro);
+  transform: translateY(-1px);
+}
+
+/* Estado "atualizar" — destaque maior */
+.footer-pwa-btn.tem-update {
+  background: rgba(201, 151, 58, 0.18);
+  border-color: rgba(201, 151, 58, 0.6);
+  animation: footerPulseBorder 2s ease-in-out infinite;
+}
+
+@keyframes footerPulseBorder {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 151, 58, 0); }
+  50%       { box-shadow: 0 0 0 4px rgba(201, 151, 58, 0.15); }
+}
+
+/* Oculto quando app já está instalado e atualizado */
+.footer-pwa-btn.oculto {
+  display: none;
+}
+
+/* ── Rodapé ── */
 .footer-bottom {
   margin-top: 3rem;
   padding: 1.5rem 0;

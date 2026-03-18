@@ -25,14 +25,15 @@
       <div class="column is-2">
         <p class="footer-titulo">Navegação</p>
         <a class="footer-link" href="#sobre">Sobre Nós</a>
-        <a class="footer-link" href="#encontros">Encontros</p>
-        <a class="footer-link" href="#testemunhos">Testemunhos</p>
-        <a class="footer-link" href="/liturgia">Liturgia Diária</p>
-        <a class="footer-link" href="#participar">Pedido de Oração</p>
+        <a class="footer-link" href="#encontros">Encontros</a>
+        <a class="footer-link" href="#testemunhos">Testemunhos</a>
+        <a class="footer-link" href="/liturgia">Liturgia Diária</a>
+        <a class="footer-link" href="#participar">Pedido de Oração</a>
       </div>
 
       <div class="column is-3">
         <p class="footer-titulo">Contato</p>
+        <!--
         <a href="mailto:<%= site.data.grupo.contato.email %>" class="footer-link">
           <i class="fas fa-envelope" style="width:16px; color:rgba(201,151,58,0.6)"></i>
           &nbsp; <%= site.data.grupo.contato.email %>
@@ -41,6 +42,7 @@
           <i class="fas fa-phone" style="width:16px; color:rgba(201,151,58,0.6)"></i>
           &nbsp; <%= site.data.grupo.contato.telefone %>
         </a>
+        -->
         <a href="<%= site.data.grupo.contato.link_instagram %>" class="footer-link">
           <i class="fab fa-instagram" style="width:16px; color:rgba(201,151,58,0.6)"></i>
           &nbsp; <%= site.data.grupo.contato.instagram %>
@@ -48,6 +50,11 @@
         <a href="<%= site.data.grupo.contato.maps_link %>" class="footer-link">
           <i class="fas fa-map-marker-alt" style="width:16px; color:rgba(201,151,58,0.6)"></i>
           &nbsp; <%= site.data.grupo.contato.endereco %>
+        </a>
+        <!-- Botão PWA: instalar ou atualizar — controlado pelo pwa.js -->
+        <a href="/instalar" id="footer-pwa-btn" class="footer-pwa-btn" aria-label="Instalar aplicativo">
+          <i class="fas fa-mobile-alt" id="footer-pwa-icon"></i>
+          <span id="footer-pwa-label">Instalar o app</span>
         </a>
       </div>
     </div>
@@ -61,8 +68,8 @@
       </p>
       <div class="footer-social">
         <a href="<%= site.data.grupo.contato.link_instagram %>" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="<%= site.data.grupo.contato.facebook %>"class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="<%= site.data.grupo.contato.facebook %>" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <%# <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a> %>
         <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </div>

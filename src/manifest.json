@@ -1,7 +1,7 @@
 {
   "name": "Grupo de Oração Mãe Rainha",
   "short_name": "Mãe Rainha",
-  "description": "Adoração, oração e louvor — Comunidade Nossa Senhora Aparecida, Paróquia Santa Cruz",
+  "description": "Liturgia diária, Santo Rosário, Bíblia e orações — Comunidade Nossa Senhora Aparecida, Paróquia Santa Cruz",
   "start_url": "/?source=pwa",
   "id": "/?source=pwa",
   "display": "standalone",
@@ -91,8 +91,26 @@
     {
       "name": "Liturgia de Hoje",
       "short_name": "Liturgia",
-      "description": "Ver as leituras do dia",
+      "description": "Leituras, salmo e evangelho do dia",
       "url": "/liturgia?source=shortcut",
+      "icons": [
+        { "src": "/images/icons/icon-96.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Santo Rosário",
+      "short_name": "Rosário",
+      "description": "Rezar o Rosário com os mistérios do dia",
+      "url": "/rosario?source=shortcut",
+      "icons": [
+        { "src": "/images/icons/icon-96.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Bíblia Ave Maria",
+      "short_name": "Bíblia",
+      "description": "Leitura completa da Bíblia — Antigo e Novo Testamento",
+      "url": "/biblia?source=shortcut",
       "icons": [
         { "src": "/images/icons/icon-96.png", "sizes": "96x96", "type": "image/png" }
       ]
@@ -100,8 +118,17 @@
     {
       "name": "Pedido de Oração",
       "short_name": "Oração",
-      "description": "Enviar pedido de oração",
+      "description": "Enviar um pedido de oração",
       "url": "/#participar?source=shortcut",
+      "icons": [
+        { "src": "/images/icons/icon-96.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Encontros",
+      "short_name": "Encontros",
+      "description": "Agenda dos encontros do grupo",
+      "url": "/#encontros?source=shortcut",
       "icons": [
         { "src": "/images/icons/icon-96.png", "sizes": "96x96", "type": "image/png" }
       ]

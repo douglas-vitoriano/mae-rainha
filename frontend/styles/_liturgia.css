@@ -7,12 +7,16 @@
   background:
     radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201,151,58,.07) 0%, transparent 70%),
     linear-gradient(160deg, #0b1530 0%, #0f1b3d 100%);
-  padding: 14rem 1.5rem 4rem;
+  padding-top: calc(var(--navbar-height, 12rem) + 4rem);
+  padding-right: 1.5rem;
+  padding-bottom: 4rem;
+  padding-left: 1.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: 0;
 }
+
 .liturgia-hero::after {
   content: '✦';
   position: absolute;
@@ -574,8 +578,15 @@
 }
 .oe-doxologia .oe-parte-assembleia-texto { color: rgba(255,255,255,.95); }
 
-/* ── Responsivo ── */
-@media (max-width: 1023px) { .liturgia-hero { padding: 8rem 1rem 3rem; } }
+@media (max-width: 1023px) {
+  .liturgia-hero {
+    padding-top: calc(var(--navbar-height, 8rem) + 2.5rem);
+    padding-right: 1rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .liturgia-container    { padding: 2rem 1rem 4rem; gap: 1.25rem; }
   .liturgia-bloco        { padding: 1.5rem 1.25rem; }

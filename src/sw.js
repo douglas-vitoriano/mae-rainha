@@ -1,8 +1,9 @@
-const APP_VERSION    = 'v3'
-const CACHE_SHELL    = `mae-rainha-shell-${APP_VERSION}`
-const CACHE_STATIC   = `mae-rainha-static-${APP_VERSION}`
-const CACHE_FONTS    = `mae-rainha-fonts-${APP_VERSION}`
-const ALL_CACHES     = [CACHE_SHELL, CACHE_STATIC, CACHE_FONTS]
+const APP_VERSION  = '1.2'
+
+const CACHE_SHELL  = `mae-rainha-shell-${APP_VERSION}`
+const CACHE_STATIC = `mae-rainha-static-${APP_VERSION}`
+const CACHE_FONTS  = `mae-rainha-fonts-${APP_VERSION}`
+const ALL_CACHES   = [CACHE_SHELL, CACHE_STATIC, CACHE_FONTS]
 
 const PRE_CACHE = [
   '/',
@@ -11,31 +12,41 @@ const PRE_CACHE = [
   '/liturgia/',
   '/rosario',
   '/rosario/',
+  '/biblia',
+  '/biblia/',
+  '/instalar',
+  '/instalar/',
   '/offline.html',
   '/404.html',
+  '/500.html',
   '/manifest.json',
+  '/biblia_ave_maria.json',
   '/images/logotipo.png',
   '/images/sagradafamilia.png',
+  '/images/icons/icon-72.png',
+  '/images/icons/icon-96.png',
+  '/images/icons/icon-128.png',
+  '/images/icons/icon-144.png',
+  '/images/icons/icon-152.png',
   '/images/icons/icon-192.png',
+  '/images/icons/icon-384.png',
   '/images/icons/icon-512.png',
 ]
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_SHELL)
-      .then(cache => {
-
-        return Promise.allSettled(
+      .then(cache =>
+        Promise.allSettled(
           PRE_CACHE.map(url =>
             cache.add(url).catch(err =>
               console.warn('[SW] Não foi possível pré-cachear:', url, err)
             )
           )
         )
-      })
+      )
       .then(() => {
-        console.log('[SW] Shell cacheado com sucesso')
-        return self.skipWaiting()
+        console.log(`[SW] v${APP_VERSION} instalado`)
       })
       .catch(err => console.warn('[SW] Erro no pre-cache:', err))
   )
@@ -52,7 +63,10 @@ self.addEventListener('activate', event => {
             return caches.delete(k)
           })
       ))
-      .then(() => self.clients.claim())
+      .then(() => {
+        console.log(`[SW] v${APP_VERSION} ativo`)
+        return self.clients.claim()
+      })
   )
 })
 
@@ -61,7 +75,6 @@ self.addEventListener('fetch', event => {
   const url = new URL(request.url)
 
   if (request.method !== 'GET') return
-
   if (url.protocol === 'chrome-extension:') return
 
   if (url.hostname.includes('liturgia.up.railway.app')) {
@@ -97,6 +110,11 @@ self.addEventListener('fetch', event => {
     return
   }
 
+  if (url.pathname === '/biblia_ave_maria.json') {
+    event.respondWith(cacheFirstWithNetwork(request, CACHE_STATIC))
+    return
+  }
+
   if (url.pathname === '/manifest.json' || url.pathname === '/sw.js') {
     event.respondWith(networkFirstWithCache(request, CACHE_SHELL))
     return
@@ -104,6 +122,7 @@ self.addEventListener('fetch', event => {
 
   event.respondWith(networkFirstWithOfflineFallback(request))
 })
+
 
 async function networkOnlyWithFallback(request) {
   try {
@@ -159,27 +178,22 @@ async function networkFirstWithOfflineFallback(request) {
     if (cached) return cached
 
     const url = new URL(request.url)
-    const pathname = url.pathname
-
     const variantes = new Set()
-    variantes.add(pathname)
 
-    if (pathname.endsWith('/')) {
-      variantes.add(pathname.slice(0, -1))
-      variantes.add(pathname + 'index.html')
+    if (url.pathname.endsWith('/')) {
+      variantes.add(url.pathname.slice(0, -1))
+      variantes.add(url.pathname + 'index.html')
     } else {
-      variantes.add(pathname + '/')
-      variantes.add(pathname + '/index.html')
-      variantes.add(pathname + '.html') 
+      variantes.add(url.pathname + '/')
+      variantes.add(url.pathname + '/index.html')
+      variantes.add(url.pathname + '.html')
     }
 
     for (const alt of variantes) {
-      if (alt === pathname) continue
       cached = await caches.match(new Request(url.origin + alt))
       if (cached) return cached
     }
 
-    // 3. Se for navegação de página, retorna tela offline
     if (request.mode === 'navigate') {
       const offlinePage = await caches.match('/offline.html')
       if (offlinePage) return offlinePage
@@ -191,10 +205,11 @@ async function networkFirstWithOfflineFallback(request) {
 
 self.addEventListener('message', event => {
   if (event.data?.type === 'SKIP_WAITING') {
+    console.log('[SW] SKIP_WAITING recebido — ativando nova versão')
     self.skipWaiting()
   }
 
   if (event.data?.type === 'GET_VERSION') {
-    event.ports[0].postMessage({ version: APP_VERSION })
+    event.ports[0]?.postMessage({ version: APP_VERSION })
   }
 })
